@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LaunchVC.swift
 //  party
 //
 //  Created by John Leonardo on 11/17/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LaunchVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
