@@ -25,6 +25,8 @@
 		0996BDEC21A12B950088D50B /* Asap-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDEB21A12B950088D50B /* Asap-BoldItalic.ttf */; };
 		09CE57D521A13ABD006B50EC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57D421A13ABD006B50EC /* LoginVC.swift */; };
 		09CE57D721A15D76006B50EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09CE57D621A15D76006B50EC /* GoogleService-Info.plist */; };
+		09CE57D921A16F45006B50EC /* SignupStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57D821A16F45006B50EC /* SignupStep1VC.swift */; };
+		09CE57DB21A17437006B50EC /* SignupStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57DA21A17437006B50EC /* SignupStep2VC.swift */; };
 		250898883CAE339F5B002560 /* Pods_party.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DE60774A3D7CE7CAC41A51 /* Pods_party.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		0996BDEB21A12B950088D50B /* Asap-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-BoldItalic.ttf"; sourceTree = "<group>"; };
 		09CE57D421A13ABD006B50EC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		09CE57D621A15D76006B50EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09CE57D821A16F45006B50EC /* SignupStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep1VC.swift; sourceTree = "<group>"; };
+		09CE57DA21A17437006B50EC /* SignupStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep2VC.swift; sourceTree = "<group>"; };
 		353073E4677F85D673E3FF10 /* Pods-party.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-party.release.xcconfig"; path = "Pods/Target Support Files/Pods-party/Pods-party.release.xcconfig"; sourceTree = "<group>"; };
 		792FB10E1A7269E5C14BB425 /* Pods-party.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-party.debug.xcconfig"; path = "Pods/Target Support Files/Pods-party/Pods-party.debug.xcconfig"; sourceTree = "<group>"; };
 		C6DE60774A3D7CE7CAC41A51 /* Pods_party.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_party.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +100,8 @@
 				0996BDE121A125FB0088D50B /* LaunchScreen.storyboard */,
 				0996BDE421A125FB0088D50B /* Info.plist */,
 				09CE57D421A13ABD006B50EC /* LoginVC.swift */,
+				09CE57D821A16F45006B50EC /* SignupStep1VC.swift */,
+				09CE57DA21A17437006B50EC /* SignupStep2VC.swift */,
 			);
 			path = party;
 			sourceTree = "<group>";
@@ -224,13 +230,21 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-party/Pods-party-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SAConfettiView/SAConfettiView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/YXWaveView/YXWaveView.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAConfettiView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YXWaveView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -279,6 +293,8 @@
 			files = (
 				0996BDDB21A125F90088D50B /* LaunchVC.swift in Sources */,
 				0996BDD921A125F90088D50B /* AppDelegate.swift in Sources */,
+				09CE57D921A16F45006B50EC /* SignupStep1VC.swift in Sources */,
+				09CE57DB21A17437006B50EC /* SignupStep2VC.swift in Sources */,
 				09CE57D521A13ABD006B50EC /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -100,6 +100,9 @@
                                 <state key="normal" title="Log in">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="attemptLogin:" destination="YOv-3c-ECf" eventType="touchUpInside" id="ekj-vC-wOa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKI-sZ-c8n">
                                 <rect key="frame" x="30" y="607" width="315" height="40"/>
@@ -111,6 +114,9 @@
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="attemptSignup:" destination="YOv-3c-ECf" eventType="touchUpInside" id="j3I-qw-bg6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiR-Ty-Ste">
                                 <rect key="frame" x="113.5" y="441" width="148" height="27"/>
@@ -118,6 +124,9 @@
                                 <state key="normal" title="I forgot my password 😞">
                                     <color key="titleColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="attemptForgotPassword:" destination="YOv-3c-ECf" eventType="touchUpInside" id="fCs-DT-0GJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.97647058823529409" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -141,11 +150,108 @@
                         <outlet property="loginBtn" destination="HgR-kS-MgN" id="HWI-LN-GQM"/>
                         <outlet property="passwordField" destination="vk1-ug-VQC" id="GOo-ff-E53"/>
                         <outlet property="signupBtn" destination="lKI-sZ-c8n" id="VnG-Jh-gVl"/>
+                        <segue destination="7Mi-AA-c9y" kind="show" identifier="goToSignup" id="UkR-qH-7hv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfg-7I-OPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="888.79999999999995" y="124.58770614692655"/>
+        </scene>
+        <!--Signup Step1VC-->
+        <scene sceneID="qId-1u-ayO">
+            <objects>
+                <viewController id="7Mi-AA-c9y" customClass="SignupStep1VC" customModule="party" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dau-Jb-hwQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello. 👋" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08Y-YR-eZb">
+                                <rect key="frame" x="40" y="60" width="170" height="49"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="40"/>
+                                <color key="textColor" red="0.99215686274509807" green="0.0" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for downloading! 🎉 First off, what's your name?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dch-Gq-d0s">
+                                <rect key="frame" x="40" y="117" width="295" height="49"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lr7-wg-N0C">
+                                <rect key="frame" x="20" y="318" width="335" height="31"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98429685831069946" green="0.97640484571456909" blue="0.98039323091506958" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="JUv-2T-Vid" firstAttribute="trailing" secondItem="Lr7-wg-N0C" secondAttribute="trailing" constant="20" id="G7u-6D-zo5"/>
+                            <constraint firstItem="JUv-2T-Vid" firstAttribute="trailing" secondItem="Dch-Gq-d0s" secondAttribute="trailing" constant="40" id="PYW-Wj-z9O"/>
+                            <constraint firstItem="Dch-Gq-d0s" firstAttribute="top" secondItem="08Y-YR-eZb" secondAttribute="bottom" constant="8" id="Pih-dv-b6B"/>
+                            <constraint firstItem="Lr7-wg-N0C" firstAttribute="centerY" secondItem="dau-Jb-hwQ" secondAttribute="centerY" id="dcJ-wt-WoN"/>
+                            <constraint firstItem="08Y-YR-eZb" firstAttribute="leading" secondItem="JUv-2T-Vid" secondAttribute="leading" constant="40" id="grg-mr-xQ9"/>
+                            <constraint firstItem="08Y-YR-eZb" firstAttribute="top" secondItem="JUv-2T-Vid" secondAttribute="top" constant="40" id="o0P-Yp-i3e"/>
+                            <constraint firstItem="Lr7-wg-N0C" firstAttribute="leading" secondItem="JUv-2T-Vid" secondAttribute="leading" constant="20" id="pYg-Ab-Z6D"/>
+                            <constraint firstItem="Dch-Gq-d0s" firstAttribute="leading" secondItem="JUv-2T-Vid" secondAttribute="leading" constant="40" id="qMZ-0r-N0E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JUv-2T-Vid"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameField" destination="Lr7-wg-N0C" id="xoa-IY-4Ri"/>
+                        <segue destination="scZ-5P-I5x" kind="presentation" identifier="goToSignup2" id="t3u-Zs-PJh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PSu-4x-AWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888.79999999999995" y="816.34182908545733"/>
+        </scene>
+        <!--Signup Step2VC-->
+        <scene sceneID="R9P-UP-Sq6">
+            <objects>
+                <viewController id="scZ-5P-I5x" customClass="SignupStep2VC" customModule="party" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sVr-gs-ppS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey, &lt;Name&gt;! 😎 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lK-Zd-AT9">
+                                <rect key="frame" x="40" y="60" width="194" height="27"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                                <color key="textColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nice to meet you! Next, what's your email? " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z77-6f-zZY">
+                                <rect key="frame" x="40" y="95" width="295" height="49"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zdM-2s-Tji">
+                                <rect key="frame" x="20" y="318" width="335" height="31"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.97647058823529409" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="2lK-Zd-AT9" firstAttribute="top" secondItem="q0Y-V5-UDb" secondAttribute="top" constant="40" id="Ada-hr-gWh"/>
+                            <constraint firstItem="zdM-2s-Tji" firstAttribute="leading" secondItem="q0Y-V5-UDb" secondAttribute="leading" constant="20" id="FeL-eU-Ity"/>
+                            <constraint firstItem="zdM-2s-Tji" firstAttribute="centerY" secondItem="sVr-gs-ppS" secondAttribute="centerY" id="LHh-dF-K7t"/>
+                            <constraint firstItem="z77-6f-zZY" firstAttribute="top" secondItem="2lK-Zd-AT9" secondAttribute="bottom" constant="8" id="M1U-OM-90c"/>
+                            <constraint firstItem="q0Y-V5-UDb" firstAttribute="trailing" secondItem="zdM-2s-Tji" secondAttribute="trailing" constant="20" id="PPW-OL-zZK"/>
+                            <constraint firstItem="2lK-Zd-AT9" firstAttribute="leading" secondItem="q0Y-V5-UDb" secondAttribute="leading" constant="40" id="ZRX-on-9Vi"/>
+                            <constraint firstItem="q0Y-V5-UDb" firstAttribute="trailing" secondItem="z77-6f-zZY" secondAttribute="trailing" constant="40" id="gw1-7e-4GI"/>
+                            <constraint firstItem="z77-6f-zZY" firstAttribute="leading" secondItem="q0Y-V5-UDb" secondAttribute="leading" constant="40" id="xZD-x6-cLX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q0Y-V5-UDb"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="zdM-2s-Tji" id="ogP-yR-GDe"/>
+                        <outlet property="nameLbl" destination="2lK-Zd-AT9" id="iX5-Vu-hXq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hls-ZU-pXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="816"/>
         </scene>
     </scenes>
 </document>

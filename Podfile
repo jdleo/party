@@ -8,4 +8,7 @@ target 'party' do
   # Pods for party
   pod "SAConfettiView"
   pod 'YXWaveView'
+  pod 'SwiftMessages'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 end

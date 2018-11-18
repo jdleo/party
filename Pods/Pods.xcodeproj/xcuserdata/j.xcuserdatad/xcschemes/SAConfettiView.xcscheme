@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "072D8B8D882B93AFC1B252FD118F7579"
+               BlueprintIdentifier = "0D99C0EC970C7A0140360D93E3F69972"
                BuildableName = "SAConfettiView.framework"
                BlueprintName = "SAConfettiView"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "072D8B8D882B93AFC1B252FD118F7579"
+            BlueprintIdentifier = "0D99C0EC970C7A0140360D93E3F69972"
             BuildableName = "SAConfettiView.framework"
             BlueprintName = "SAConfettiView"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5D8E24EF54A46B53759F2C393C06752C"
+               BlueprintIdentifier = "EB5E87792CF8E49D7F5694EA4C0E8ABE"
                BuildableName = "YXWaveView.framework"
                BlueprintName = "YXWaveView"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5D8E24EF54A46B53759F2C393C06752C"
+            BlueprintIdentifier = "EB5E87792CF8E49D7F5694EA4C0E8ABE"
             BuildableName = "YXWaveView.framework"
             BlueprintName = "YXWaveView"
             ReferencedContainer = "container:Pods.xcodeproj">
