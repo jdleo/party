@@ -1,5 +1,5 @@
 //
-//  SignupStep2VC.swift
+//  SignupStep3VC.swift
 //  party
 //
 //  Created by John Leonardo on 11/18/18.
@@ -9,42 +9,53 @@
 import UIKit
 import SwiftMessages
 
-class SignupStep2VC: UIViewController, UITextFieldDelegate {
+class SignupStep3VC: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var nameLbl: UILabel!
-    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
     
     var name: String!
+    var email: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailField.delegate = self
-        
-        let nameChunk = name.components(separatedBy: " ")
-        nameLbl.text = "Hi, \(nameChunk[0])😎"
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToSignup3" {
-            let destination = segue.destination as! SignupStep3VC
-            destination.name = self.name
-            destination.email = self.emailField.text!
-        }
+
+        usernameField.delegate = self
+        usernameField.addTarget(self, action: #selector(SignupStep3VC.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if emailField.text != "", let email = emailField.text {
-            if email.isValidEmail() {
-                self.performSegue(withIdentifier: "goToSignup3", sender: nil)
+        if usernameField.text != "", let username = usernameField.text {
+            if username.count <= 16 {
+                var uname = username
+                //strip the @ symbol
+                uname.remove(at: uname.startIndex)
+                if uname.isAlphanumeric {
+                    if uname != "" {
+                        
+                    } else {
+                        //username is empty at this point for whatever reason
+                        self.presentError(message: "Username can't be empty.")
+                    }
+                } else {
+                    //username has special characters
+                    self.presentError(message: "Username can't have any special characters.")
+                }
             } else {
-                //invalid email
-                self.presentError(message: "Your email is invalid.")
+                //username is too long
+                self.presentError(message: "Username can't be over 15 characters")
             }
         } else {
-            //is empty
-            self.presentError(message: "Your email can't be empty.")
+            //field is empty
+            self.presentError(message: "Text field can't be empty.")
         }
         return true
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        //insert @ symbol at the beginning of the string if none already
+        if usernameField.text?.prefix(1) != "@" {
+            usernameField.text?.insert("@", at: usernameField.text?.startIndex ?? "".startIndex)
+        }
     }
     
     //helper function to present error to user (uses SwiftMessages)
@@ -78,13 +89,10 @@ class SignupStep2VC: UIViewController, UITextFieldDelegate {
         SwiftMessages.show(config: config, view: view)
     }
 
-
 }
 
 extension String {
-    func isValidEmail() -> Bool {
-        // here, `try!` will always succeed because the pattern is valid
-        let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
-        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+    var isAlphanumeric: Bool {
+        return !isEmpty && range(of: "[^a-zA-Z0-9]", options: .regularExpression) == nil
     }
 }
