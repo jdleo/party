@@ -23,6 +23,8 @@
 		0996BDE021A125FB0088D50B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDDF21A125FB0088D50B /* Assets.xcassets */; };
 		0996BDE321A125FB0088D50B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDE121A125FB0088D50B /* LaunchScreen.storyboard */; };
 		0996BDEC21A12B950088D50B /* Asap-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDEB21A12B950088D50B /* Asap-BoldItalic.ttf */; };
+		09CE57D521A13ABD006B50EC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57D421A13ABD006B50EC /* LoginVC.swift */; };
+		250898883CAE339F5B002560 /* Pods_party.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DE60774A3D7CE7CAC41A51 /* Pods_party.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		0996BDE221A125FB0088D50B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0996BDE421A125FB0088D50B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0996BDEB21A12B950088D50B /* Asap-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-BoldItalic.ttf"; sourceTree = "<group>"; };
+		09CE57D421A13ABD006B50EC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		353073E4677F85D673E3FF10 /* Pods-party.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-party.release.xcconfig"; path = "Pods/Target Support Files/Pods-party/Pods-party.release.xcconfig"; sourceTree = "<group>"; };
+		792FB10E1A7269E5C14BB425 /* Pods-party.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-party.debug.xcconfig"; path = "Pods/Target Support Files/Pods-party/Pods-party.debug.xcconfig"; sourceTree = "<group>"; };
+		C6DE60774A3D7CE7CAC41A51 /* Pods_party.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_party.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				250898883CAE339F5B002560 /* Pods_party.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +69,8 @@
 			children = (
 				0996BDD721A125F90088D50B /* party */,
 				0996BDD621A125F90088D50B /* Products */,
+				A645E5B1B26D55E216156F24 /* Pods */,
+				442C2C1AD62E7902A18CAF5B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +92,7 @@
 				0996BDDF21A125FB0088D50B /* Assets.xcassets */,
 				0996BDE121A125FB0088D50B /* LaunchScreen.storyboard */,
 				0996BDE421A125FB0088D50B /* Info.plist */,
+				09CE57D421A13ABD006B50EC /* LoginVC.swift */,
 			);
 			path = party;
 			sourceTree = "<group>";
@@ -105,6 +115,23 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
+		442C2C1AD62E7902A18CAF5B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6DE60774A3D7CE7CAC41A51 /* Pods_party.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A645E5B1B26D55E216156F24 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				792FB10E1A7269E5C14BB425 /* Pods-party.debug.xcconfig */,
+				353073E4677F85D673E3FF10 /* Pods-party.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +139,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0996BDE721A125FB0088D50B /* Build configuration list for PBXNativeTarget "party" */;
 			buildPhases = (
+				A3DC8FA481C6DD1932941BBD /* [CP] Check Pods Manifest.lock */,
 				0996BDD121A125F90088D50B /* Sources */,
 				0996BDD221A125F90088D50B /* Frameworks */,
 				0996BDD321A125F90088D50B /* Resources */,
+				261E5068789F61BBD175C676 /* [CP] Embed Pods Frameworks */,
+				E67764DB9B30EB3D14CF9344 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,6 +212,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		261E5068789F61BBD175C676 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-party/Pods-party-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SAConfettiView/SAConfettiView.framework",
+				"${BUILT_PRODUCTS_DIR}/YXWaveView/YXWaveView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAConfettiView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YXWaveView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-party/Pods-party-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3DC8FA481C6DD1932941BBD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-party-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E67764DB9B30EB3D14CF9344 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-party/Pods-party-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0996BDD121A125F90088D50B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -189,6 +275,7 @@
 			files = (
 				0996BDDB21A125F90088D50B /* LaunchVC.swift in Sources */,
 				0996BDD921A125F90088D50B /* AppDelegate.swift in Sources */,
+				09CE57D521A13ABD006B50EC /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,16 +419,14 @@
 		};
 		0996BDE821A125FB0088D50B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 792FB10E1A7269E5C14BB425 /* Pods-party.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QKVT7MD2SK;
 				INFOPLIST_FILE = party/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.John-Leonardo.partyy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -351,16 +436,14 @@
 		};
 		0996BDE921A125FB0088D50B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 353073E4677F85D673E3FF10 /* Pods-party.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QKVT7MD2SK;
 				INFOPLIST_FILE = party/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.John-Leonardo.partyy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
