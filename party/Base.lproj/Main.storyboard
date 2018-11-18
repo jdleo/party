@@ -30,13 +30,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaF-Oa-3GA">
-                                <rect key="frame" x="106.5" y="293" width="162" height="81"/>
+                                <rect key="frame" x="106" y="292.5" width="163.5" height="82"/>
                                 <fontDescription key="fontDescription" name="Asap-BoldItalic" family="Asap" pointSize="70"/>
                                 <color key="textColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made with ❤️ in Sacramento, California" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaZ-8L-kvP">
-                                <rect key="frame" x="27.5" y="627" width="320" height="20"/>
+                                <rect key="frame" x="45" y="628" width="285.5" height="19"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,6 +53,7 @@
                     </view>
                     <connections>
                         <segue destination="YOv-3c-ECf" kind="show" identifier="goToLogin" id="u9U-Sg-1EO"/>
+                        <segue destination="ZDf-EM-NTZ" kind="show" identifier="goToMain1" id="mRK-s9-8H8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -151,11 +152,41 @@
                         <outlet property="passwordField" destination="vk1-ug-VQC" id="GOo-ff-E53"/>
                         <outlet property="signupBtn" destination="lKI-sZ-c8n" id="VnG-Jh-gVl"/>
                         <segue destination="7Mi-AA-c9y" kind="show" identifier="goToSignup" id="UkR-qH-7hv"/>
+                        <segue destination="ZDf-EM-NTZ" kind="show" identifier="goToMain0" id="Txr-De-KzJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfg-7I-OPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="888.79999999999995" y="124.58770614692655"/>
+        </scene>
+        <!--MainVC-->
+        <scene sceneID="emB-mF-8YM">
+            <objects>
+                <viewController storyboardIdentifier="MainVC" id="ZDf-EM-NTZ" customClass="MainVC" customModule="party" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y2r-4F-Lg7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWi-3h-3jp">
+                                <rect key="frame" x="16" y="40" width="343" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="pQG-an-OkX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98429685831069946" green="0.97640484571456909" blue="0.98039323091506958" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="o9m-pL-5Hj" firstAttribute="trailing" secondItem="FWi-3h-3jp" secondAttribute="trailing" constant="16" id="Cyb-IY-qcF"/>
+                            <constraint firstItem="FWi-3h-3jp" firstAttribute="top" secondItem="o9m-pL-5Hj" secondAttribute="top" constant="20" id="RP0-dl-lkw"/>
+                            <constraint firstItem="FWi-3h-3jp" firstAttribute="leading" secondItem="o9m-pL-5Hj" secondAttribute="leading" constant="16" id="zhM-4a-VCR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o9m-pL-5Hj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NE6-oX-Ao8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1613.5999999999999" y="124.58770614692655"/>
         </scene>
         <!--Signup Step1VC-->
         <scene sceneID="qId-1u-ayO">
@@ -295,7 +326,7 @@
                     </view>
                     <connections>
                         <outlet property="usernameField" destination="BFb-xi-ngO" id="8Hr-5C-2Pz"/>
-                        <segue destination="ZQT-Oc-pbd" kind="presentation" identifier="goToSignup3" modalTransitionStyle="flipHorizontal" id="jhf-Gz-2Eb"/>
+                        <segue destination="ZQT-Oc-pbd" kind="presentation" identifier="goToSignup4" modalTransitionStyle="flipHorizontal" id="jhf-Gz-2Eb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHh-Bi-ydE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -341,10 +372,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N8e-EP-JPF"/>
                     </view>
+                    <connections>
+                        <outlet property="passwordField" destination="LYe-n4-GUM" id="Nko-fy-owT"/>
+                        <segue destination="ZDf-EM-NTZ" kind="show" identifier="goToMain" id="T7d-rB-EDo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Si-tU-9jA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2996" y="815"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="mRK-s9-8H8"/>
+    </inferredMetricsTieBreakers>
 </document>

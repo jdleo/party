@@ -8,6 +8,7 @@
 
 import UIKit
 import SAConfettiView
+import Firebase
 
 class LaunchVC: UIViewController {
     
@@ -26,8 +27,12 @@ class LaunchVC: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             confettiView.stopConfetti()
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                //segue
-                self.performSegue(withIdentifier: "goToLogin", sender: nil)
+                //segue based on user auth
+                if let user = Auth.auth().currentUser {
+                    self.performSegue(withIdentifier: "goToMain1", sender: nil)
+                } else {
+                    self.performSegue(withIdentifier: "goToLogin", sender: nil)
+                }
             }
         }
     }

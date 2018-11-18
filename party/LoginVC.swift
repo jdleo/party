@@ -74,6 +74,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                     self.presentError(message: error?.localizedDescription ?? "An error has occurred.")
                 } else {
                     //success, handle login
+                    self.performSegue(withIdentifier: "goToMain0", sender: nil)
                 }
             }
         } else {

@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftMessages
+import FirebaseFirestore
 
 class SignupStep3VC: UIViewController, UITextFieldDelegate {
     
@@ -15,6 +16,7 @@ class SignupStep3VC: UIViewController, UITextFieldDelegate {
     
     var name: String!
     var email: String!
+    var u: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,20 @@ class SignupStep3VC: UIViewController, UITextFieldDelegate {
                 uname.remove(at: uname.startIndex)
                 if uname.isAlphanumeric {
                     if uname != "" {
+                        uname = uname.lowercased()
+                        let db = Firestore.firestore()
+                        let usernameRef = db.collection("usernames").document(uname)
                         
+                        usernameRef.getDocument { (document, error) in
+                            if let document = document, document.exists {
+                                //document exists, therefore, username IS taken
+                                self.presentError(message: "@\(uname) is already taken.")
+                            } else {
+                                //document doesnt exist, therefore, username isnt taken
+                                self.u = uname
+                                self.performSegue(withIdentifier: "goToSignup4", sender: nil)
+                            }
+                        }
                     } else {
                         //username is empty at this point for whatever reason
                         self.presentError(message: "Username can't be empty.")
@@ -49,6 +64,15 @@ class SignupStep3VC: UIViewController, UITextFieldDelegate {
             self.presentError(message: "Text field can't be empty.")
         }
         return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToSignup4" {
+            let destination = segue.destination as! SignupStep4VC
+            destination.email = self.email
+            destination.name = self.name
+            destination.username = self.u
+        }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -74,7 +98,7 @@ class SignupStep3VC: UIViewController, UITextFieldDelegate {
         
         // Set message title, body, and icon. Here, we're overriding the default warning
         // image with an emoji character.
-        view.configureContent(title: "Oops", body: message, iconText: "🤔")
+        view.configureContent(title: "Oops", body: message, iconText: "😞")
         
         // Increase the external margin around the card. In general, the effect of this setting
         // depends on how the given layout is constrained to the layout margins.

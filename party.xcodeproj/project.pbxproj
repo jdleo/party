@@ -29,6 +29,7 @@
 		09CE57DB21A17437006B50EC /* SignupStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57DA21A17437006B50EC /* SignupStep2VC.swift */; };
 		09CE57DF21A1F8A2006B50EC /* SignupStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57DE21A1F8A2006B50EC /* SignupStep3VC.swift */; };
 		09CE57E121A1F8B1006B50EC /* SignupStep4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57E021A1F8B1006B50EC /* SignupStep4VC.swift */; };
+		09CE57E321A22CD6006B50EC /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57E221A22CD6006B50EC /* MainVC.swift */; };
 		250898883CAE339F5B002560 /* Pods_party.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DE60774A3D7CE7CAC41A51 /* Pods_party.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		09CE57DA21A17437006B50EC /* SignupStep2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep2VC.swift; sourceTree = "<group>"; };
 		09CE57DE21A1F8A2006B50EC /* SignupStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep3VC.swift; sourceTree = "<group>"; };
 		09CE57E021A1F8B1006B50EC /* SignupStep4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep4VC.swift; sourceTree = "<group>"; };
+		09CE57E221A22CD6006B50EC /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		353073E4677F85D673E3FF10 /* Pods-party.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-party.release.xcconfig"; path = "Pods/Target Support Files/Pods-party/Pods-party.release.xcconfig"; sourceTree = "<group>"; };
 		792FB10E1A7269E5C14BB425 /* Pods-party.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-party.debug.xcconfig"; path = "Pods/Target Support Files/Pods-party/Pods-party.debug.xcconfig"; sourceTree = "<group>"; };
 		C6DE60774A3D7CE7CAC41A51 /* Pods_party.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_party.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 				09CE57DA21A17437006B50EC /* SignupStep2VC.swift */,
 				09CE57DE21A1F8A2006B50EC /* SignupStep3VC.swift */,
 				09CE57E021A1F8B1006B50EC /* SignupStep4VC.swift */,
+				09CE57E221A22CD6006B50EC /* MainVC.swift */,
 			);
 			path = party;
 			sourceTree = "<group>";
@@ -236,20 +239,34 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-party/Pods-party-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SAConfettiView/SAConfettiView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/YXWaveView/YXWaveView.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAConfettiView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YXWaveView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +319,7 @@
 				09CE57DF21A1F8A2006B50EC /* SignupStep3VC.swift in Sources */,
 				09CE57D921A16F45006B50EC /* SignupStep1VC.swift in Sources */,
 				09CE57DB21A17437006B50EC /* SignupStep2VC.swift in Sources */,
+				09CE57E321A22CD6006B50EC /* MainVC.swift in Sources */,
 				09CE57E121A1F8B1006B50EC /* SignupStep4VC.swift in Sources */,
 				09CE57D521A13ABD006B50EC /* LoginVC.swift in Sources */,
 			);
