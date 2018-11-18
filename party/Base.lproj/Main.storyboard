@@ -13,6 +13,9 @@
         <array key="Asap-BoldItalic.ttf">
             <string>Asap-BoldItalic</string>
         </array>
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
@@ -63,13 +66,86 @@
                     <view key="view" contentMode="scaleToFill" id="msI-B4-noO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="Dr4-V7-l4w">
+                                <rect key="frame" x="30" y="240" width="315" height="109"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xCE-aR-zyU">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="sOV-1H-5tW"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-ug-VQC">
+                                        <rect key="frame" x="0.0" y="69" width="315" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ezI-y3-JCt"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgR-kS-MgN">
+                                <rect key="frame" x="30" y="389" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.99215686274509807" green="0.0" blue="0.32941176470588235" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="2E8-s5-sI3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
+                                <state key="normal" title="Log in">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKI-sZ-c8n">
+                                <rect key="frame" x="30" y="607" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.6588235294117647" green="0.0" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gNJ-gd-4O8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XiR-Ty-Ste">
+                                <rect key="frame" x="113.5" y="441" width="148" height="27"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
+                                <state key="normal" title="I forgot my password 😞">
+                                    <color key="titleColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.98431372549019602" green="0.97647058823529409" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="lKI-sZ-c8n" firstAttribute="leading" secondItem="YuZ-S8-4eW" secondAttribute="leading" constant="30" id="1Rw-vO-b1a"/>
+                            <constraint firstItem="Dr4-V7-l4w" firstAttribute="top" secondItem="YuZ-S8-4eW" secondAttribute="top" constant="220" id="2Pp-ce-dW9"/>
+                            <constraint firstItem="YuZ-S8-4eW" firstAttribute="bottom" secondItem="lKI-sZ-c8n" secondAttribute="bottom" constant="20" id="8ad-Mq-4y9"/>
+                            <constraint firstItem="YuZ-S8-4eW" firstAttribute="trailing" secondItem="HgR-kS-MgN" secondAttribute="trailing" constant="30" id="9OY-U0-XCd"/>
+                            <constraint firstItem="YuZ-S8-4eW" firstAttribute="trailing" secondItem="Dr4-V7-l4w" secondAttribute="trailing" constant="30" id="B5T-Lo-Pon"/>
+                            <constraint firstItem="HgR-kS-MgN" firstAttribute="top" secondItem="Dr4-V7-l4w" secondAttribute="bottom" constant="40" id="FM5-mq-35L"/>
+                            <constraint firstItem="Dr4-V7-l4w" firstAttribute="leading" secondItem="YuZ-S8-4eW" secondAttribute="leading" constant="30" id="Jfh-vg-Cik"/>
+                            <constraint firstItem="XiR-Ty-Ste" firstAttribute="top" secondItem="HgR-kS-MgN" secondAttribute="bottom" constant="12" id="QFX-Kb-eQy"/>
+                            <constraint firstItem="XiR-Ty-Ste" firstAttribute="centerX" secondItem="msI-B4-noO" secondAttribute="centerX" id="VET-q8-M9q"/>
+                            <constraint firstItem="HgR-kS-MgN" firstAttribute="leading" secondItem="YuZ-S8-4eW" secondAttribute="leading" constant="30" id="fyf-qt-xzw"/>
+                            <constraint firstItem="YuZ-S8-4eW" firstAttribute="trailing" secondItem="lKI-sZ-c8n" secondAttribute="trailing" constant="30" id="gjb-xT-SMW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YuZ-S8-4eW"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="xCE-aR-zyU" id="Gdz-Zq-Hf1"/>
+                        <outlet property="loginBtn" destination="HgR-kS-MgN" id="HWI-LN-GQM"/>
+                        <outlet property="passwordField" destination="vk1-ug-VQC" id="GOo-ff-E53"/>
+                        <outlet property="signupBtn" destination="lKI-sZ-c8n" id="VnG-Jh-gVl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfg-7I-OPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889" y="125"/>
+            <point key="canvasLocation" x="888.79999999999995" y="124.58770614692655"/>
         </scene>
     </scenes>
 </document>

@@ -25,7 +25,7 @@ class LaunchVC: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             confettiView.stopConfetti()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 //segue
                 self.performSegue(withIdentifier: "goToLogin", sender: nil)
             }
