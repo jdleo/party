@@ -24,6 +24,7 @@
 		0996BDE321A125FB0088D50B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDE121A125FB0088D50B /* LaunchScreen.storyboard */; };
 		0996BDEC21A12B950088D50B /* Asap-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDEB21A12B950088D50B /* Asap-BoldItalic.ttf */; };
 		09CE57D521A13ABD006B50EC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57D421A13ABD006B50EC /* LoginVC.swift */; };
+		09CE57D721A15D76006B50EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09CE57D621A15D76006B50EC /* GoogleService-Info.plist */; };
 		250898883CAE339F5B002560 /* Pods_party.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DE60774A3D7CE7CAC41A51 /* Pods_party.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		0996BDE421A125FB0088D50B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0996BDEB21A12B950088D50B /* Asap-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-BoldItalic.ttf"; sourceTree = "<group>"; };
 		09CE57D421A13ABD006B50EC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		09CE57D621A15D76006B50EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		353073E4677F85D673E3FF10 /* Pods-party.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-party.release.xcconfig"; path = "Pods/Target Support Files/Pods-party/Pods-party.release.xcconfig"; sourceTree = "<group>"; };
 		792FB10E1A7269E5C14BB425 /* Pods-party.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-party.debug.xcconfig"; path = "Pods/Target Support Files/Pods-party/Pods-party.debug.xcconfig"; sourceTree = "<group>"; };
 		C6DE60774A3D7CE7CAC41A51 /* Pods_party.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_party.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 		0996BDD721A125F90088D50B /* party */ = {
 			isa = PBXGroup;
 			children = (
+				09CE57D621A15D76006B50EC /* GoogleService-Info.plist */,
 				0996BDEA21A12B4E0088D50B /* fonts */,
 				0996BDD821A125F90088D50B /* AppDelegate.swift */,
 				0996BDDA21A125F90088D50B /* LaunchVC.swift */,
@@ -195,6 +198,7 @@
 			files = (
 				0900CEB121A135CA00EF3A75 /* Montserrat-Regular.ttf in Resources */,
 				0900CEAE21A135CA00EF3A75 /* Montserrat-BlackItalic.ttf in Resources */,
+				09CE57D721A15D76006B50EC /* GoogleService-Info.plist in Resources */,
 				0996BDEC21A12B950088D50B /* Asap-BoldItalic.ttf in Resources */,
 				0900CEB021A135CA00EF3A75 /* Montserrat-Italic.ttf in Resources */,
 				0900CEB221A135CA00EF3A75 /* Montserrat-Bold.ttf in Resources */,
@@ -426,7 +430,10 @@
 				DEVELOPMENT_TEAM = QKVT7MD2SK;
 				INFOPLIST_FILE = party/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.John-Leonardo.partyy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -443,7 +450,10 @@
 				DEVELOPMENT_TEAM = QKVT7MD2SK;
 				INFOPLIST_FILE = party/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.John-Leonardo.partyy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
