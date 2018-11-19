@@ -30,6 +30,7 @@
 		09CE57DF21A1F8A2006B50EC /* SignupStep3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57DE21A1F8A2006B50EC /* SignupStep3VC.swift */; };
 		09CE57E121A1F8B1006B50EC /* SignupStep4VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57E021A1F8B1006B50EC /* SignupStep4VC.swift */; };
 		09CE57E321A22CD6006B50EC /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57E221A22CD6006B50EC /* MainVC.swift */; };
+		09CE57E521A2BB55006B50EC /* left-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 09CE57E421A2BB55006B50EC /* left-arrow.png */; };
 		250898883CAE339F5B002560 /* Pods_party.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DE60774A3D7CE7CAC41A51 /* Pods_party.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		09CE57DE21A1F8A2006B50EC /* SignupStep3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep3VC.swift; sourceTree = "<group>"; };
 		09CE57E021A1F8B1006B50EC /* SignupStep4VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep4VC.swift; sourceTree = "<group>"; };
 		09CE57E221A22CD6006B50EC /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		09CE57E421A2BB55006B50EC /* left-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "left-arrow.png"; sourceTree = "<group>"; };
 		353073E4677F85D673E3FF10 /* Pods-party.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-party.release.xcconfig"; path = "Pods/Target Support Files/Pods-party/Pods-party.release.xcconfig"; sourceTree = "<group>"; };
 		792FB10E1A7269E5C14BB425 /* Pods-party.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-party.debug.xcconfig"; path = "Pods/Target Support Files/Pods-party/Pods-party.debug.xcconfig"; sourceTree = "<group>"; };
 		C6DE60774A3D7CE7CAC41A51 /* Pods_party.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_party.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,7 @@
 				0996BDDA21A125F90088D50B /* LaunchVC.swift */,
 				0996BDDC21A125F90088D50B /* Main.storyboard */,
 				0996BDDF21A125FB0088D50B /* Assets.xcassets */,
+				09CE57E421A2BB55006B50EC /* left-arrow.png */,
 				0996BDE121A125FB0088D50B /* LaunchScreen.storyboard */,
 				0996BDE421A125FB0088D50B /* Info.plist */,
 				09CE57D421A13ABD006B50EC /* LoginVC.swift */,
@@ -215,6 +218,7 @@
 				0900CEAE21A135CA00EF3A75 /* Montserrat-BlackItalic.ttf in Resources */,
 				09CE57D721A15D76006B50EC /* GoogleService-Info.plist in Resources */,
 				0996BDEC21A12B950088D50B /* Asap-BoldItalic.ttf in Resources */,
+				09CE57E521A2BB55006B50EC /* left-arrow.png in Resources */,
 				0900CEB021A135CA00EF3A75 /* Montserrat-Italic.ttf in Resources */,
 				0900CEB221A135CA00EF3A75 /* Montserrat-Bold.ttf in Resources */,
 				0900CEAA21A135CA00EF3A75 /* Montserrat-Black.ttf in Resources */,
