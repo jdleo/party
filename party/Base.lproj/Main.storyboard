@@ -69,7 +69,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops. 😳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8y-JK-9UI">
-                                <rect key="frame" x="102" y="80" width="171" height="49"/>
+                                <rect key="frame" x="108" y="80" width="159.5" height="47"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="40"/>
                                 <color key="textColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -86,12 +86,12 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's okay. It happens to all of us. 🙃 Enter your email and I'll send you a password reset link." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3to-SH-xbo">
-                                <rect key="frame" x="16" y="137" width="343" height="73.5"/>
+                                <rect key="frame" x="16" y="135" width="343" height="70"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gg8-ia-yf6">
-                                <rect key="frame" x="16" y="318" width="343" height="31"/>
+                                <rect key="frame" x="16" y="318.5" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go"/>
@@ -232,8 +232,35 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWi-3h-3jp">
                                 <rect key="frame" x="16" y="40" width="343" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ip-T9-pD2">
+                                        <rect key="frame" x="20" y="15" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="MaX-3A-xKm"/>
+                                            <constraint firstAttribute="width" constant="50" id="MrL-Wd-ozn"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwr-lm-H85">
+                                        <rect key="frame" x="86" y="15" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiA-N0-Zo4">
+                                        <rect key="frame" x="86" y="23.5" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="2Ip-T9-pD2" firstAttribute="leading" secondItem="FWi-3h-3jp" secondAttribute="leading" constant="20" id="3Tc-jH-ZP9"/>
+                                    <constraint firstItem="SiA-N0-Zo4" firstAttribute="leading" secondItem="2Ip-T9-pD2" secondAttribute="trailing" constant="16" id="5op-jM-lEi"/>
+                                    <constraint firstItem="SiA-N0-Zo4" firstAttribute="top" secondItem="hwr-lm-H85" secondAttribute="bottom" constant="8.5" id="HeQ-MP-evG"/>
+                                    <constraint firstItem="2Ip-T9-pD2" firstAttribute="centerY" secondItem="FWi-3h-3jp" secondAttribute="centerY" id="Njj-fD-ooG"/>
+                                    <constraint firstItem="hwr-lm-H85" firstAttribute="leading" secondItem="2Ip-T9-pD2" secondAttribute="trailing" constant="16" id="QPK-Rl-Mra"/>
+                                    <constraint firstItem="hwr-lm-H85" firstAttribute="top" secondItem="FWi-3h-3jp" secondAttribute="top" constant="15" id="cjI-WU-KUw"/>
                                     <constraint firstAttribute="height" constant="80" id="pQG-an-OkX"/>
                                 </constraints>
                             </view>
@@ -252,7 +279,7 @@
                                         <rect key="frame" x="181.5" y="0.0" width="161.5" height="28"/>
                                         <color key="backgroundColor" red="0.66274509803921566" green="0.19215686274509802" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="13"/>
-                                        <state key="normal" title="Follow people 😁">
+                                        <state key="normal" title="Follow friends 😁">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -418,7 +445,10 @@
                     <connections>
                         <outlet property="followPeopleBtn" destination="dDQ-yK-nMp" id="fS2-2Z-mwV"/>
                         <outlet property="menuBtn" destination="MXz-fm-74A" id="GJz-9B-tDF"/>
+                        <outlet property="nameLbl" destination="hwr-lm-H85" id="0x7-WE-3vb"/>
                         <outlet property="plusBtn" destination="AkF-qa-uCw" id="70N-FA-bV6"/>
+                        <outlet property="profileImg" destination="2Ip-T9-pD2" id="KQx-vc-o2o"/>
+                        <outlet property="statusLbl" destination="SiA-N0-Zo4" id="YD7-Df-dss"/>
                         <outlet property="tableView" destination="St2-G5-EFd" id="35o-Q4-oO2"/>
                         <outlet property="tellAFriendBtn" destination="GOR-Ys-C7f" id="j0X-Md-wsR"/>
                         <outlet property="topCard" destination="FWi-3h-3jp" id="LXx-VG-jpf"/>

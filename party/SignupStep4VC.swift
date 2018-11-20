@@ -46,7 +46,9 @@ class SignupStep4VC: UIViewController, UITextFieldDelegate {
                                 "username": self.username,
                                 "following": 0,
                                 "followers": 0,
-                                "posts": 0
+                                "posts": 0,
+                                "lastStatus": 0,
+                                "status": "😴 No posts"
                             ]) { err in
                                 if let err = err {
                                     self.presentError(message: err.localizedDescription)
@@ -58,7 +60,18 @@ class SignupStep4VC: UIViewController, UITextFieldDelegate {
                                         if let err = err {
                                             self.presentError(message: err.localizedDescription)
                                         } else {
-                                            //success, ALL FINISHED
+                                            //upload default profile pic
+                                            let storage = Storage.storage().reference()
+                                            let picRef = storage.child("avatars/\(user.uid)")
+                                            let randomDefaultImg = UIImage(named: "d\(Int.random(in: 1...36))")
+                                            let imageData = randomDefaultImg?.jpegData(compressionQuality: 0.5)
+                                            picRef.putData(imageData!, metadata: nil, completion: { (meta, error) in
+                                                if error != nil {
+                                                    print(error?.localizedDescription)
+                                                } else {
+                                                    print("success")
+                                                }
+                                            })
                                             self.performSegue(withIdentifier: "goToMain", sender: nil)
                                         }
                                     }

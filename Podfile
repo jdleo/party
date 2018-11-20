@@ -13,4 +13,5 @@ target 'party' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'CircleMenu'
+  pod 'Firebase/Storage'
 end

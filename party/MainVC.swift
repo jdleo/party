@@ -19,12 +19,25 @@ class MainVC: UIViewController, CircleMenuDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var plusBtn: CircleMenu!
     @IBOutlet weak var menuBtn: CircleMenu!
+    @IBOutlet weak var profileImg: UIImageView!
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var statusLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         plusBtn.delegate = self
         menuBtn.delegate = self
+        
+        //style profile pic view
+        profileImg.layer.cornerRadius = profileImg.frame.size.width/2
+        profileImg.clipsToBounds = true
+        //for debugging only:
+        //profileImg.image = UIImage(named: "d\(Int.random(in: 1...36))")
+        
+        //download user data
+        self.downloadMyData()
+        self.downloadMyProfilePic()
 
         //style the top card
         topCard.layer.cornerRadius = 5.0
@@ -48,6 +61,43 @@ class MainVC: UIViewController, CircleMenuDelegate {
         menuBtn.customSelectedIconView?.frame.size = CGSize(width: 40, height: 40)
         menuBtn.customSelectedIconView?.contentMode = .scaleAspectFit
         
+    }
+    
+    func downloadMyData() {
+        if let uid = Auth.auth().currentUser?.uid {
+            let db = Firestore.firestore()
+            let userRef = db.collection("users").document(uid)
+            userRef.getDocument { (snap, error) in
+                if error != nil {
+                    //error, handle
+                    print(error?.localizedDescription)
+                } else {
+                    //set name and status of user's own account
+                    let name = snap?.get("name") as! String
+                    let status = snap?.get("status") as! String
+                    self.nameLbl.text = name
+                    self.statusLbl.text = status
+                }
+            }
+        }
+    }
+    
+    func downloadMyProfilePic() {
+        if let uid = Auth.auth().currentUser?.uid {
+            let storage = Storage.storage().reference()
+            let picRef = storage.child("avatars/\(uid)")
+            
+            // Download in memory with a maximum allowed size of 5MB (1 * 1024 * 1024 bytes)
+            picRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    // Data for "images/island.jpg" is returned
+                    let image = UIImage(data: data!)
+                    self.profileImg.image = image
+                }
+            }
+        }
     }
     
     func circleMenu(_ circleMenu: CircleMenu, willDisplay button: UIButton, atIndex: Int) {
@@ -83,6 +133,9 @@ class MainVC: UIViewController, CircleMenuDelegate {
     func circleMenu(_ circleMenu: CircleMenu, buttonDidSelected button: UIButton, atIndex: Int) {
         if circleMenu.buttonsCount == 5 {
             switch (atIndex) {
+            case 0:
+                //do nothing, we're already home
+                break
             case 4:
                 //logout
                 try! Auth.auth().signOut()
