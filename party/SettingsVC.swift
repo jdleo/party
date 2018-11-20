@@ -42,6 +42,8 @@ class SettingsVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         card3.addGestureRecognizer(tap3)
         let tap4 = UITapGestureRecognizer(target: self, action: #selector(changePasswordTapped))
         card4.addGestureRecognizer(tap4)
+        let tap7 = UITapGestureRecognizer(target: self, action: #selector(changePasswordTapped))
+        card4.addGestureRecognizer(tap7)
         
         //style profile pic view
         profilePic.layer.cornerRadius = profilePic.frame.size.width/2

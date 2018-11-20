@@ -190,7 +190,7 @@
                                 <color key="textColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to change your username to? 🤔" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrN-7d-iQL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to change your username to? 🤔" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrN-7d-iQL">
                                 <rect key="frame" x="16" y="137" width="343" height="49"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
                                 <nil key="highlightedColor"/>
@@ -202,7 +202,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.98429685831069946" green="0.97640484571456909" blue="0.98039323091506958" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="y1c-rE-qgq" firstAttribute="trailing" secondItem="vhZ-tx-iJY" secondAttribute="trailing" constant="16" id="Ey3-6M-YMC"/>
                             <constraint firstItem="NrN-7d-iQL" firstAttribute="top" secondItem="KUj-AX-ERm" secondAttribute="bottom" constant="8" id="KRw-Xp-niS"/>
@@ -506,12 +506,62 @@
                         <segue destination="E59-8M-GQ8" kind="unwind" unwindAction="unwindToMainWithSegue:" id="2Tx-JB-L1T"/>
                         <segue destination="bcn-DW-djY" kind="show" identifier="goToCrisp" id="PRG-7A-yrZ"/>
                         <segue destination="mCy-D8-ZgM" kind="show" identifier="goToChangeUsername" id="vi5-Bi-x2y"/>
+                        <segue destination="NFf-JQ-CIC" kind="show" identifier="goToOpen" id="bcl-OW-bsU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXB-iK-GLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="E59-8M-GQ8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1613.5999999999999" y="-723.23838080959524"/>
+        </scene>
+        <!--OpenVC-->
+        <scene sceneID="ihX-ID-vFi">
+            <objects>
+                <viewController id="NFf-JQ-CIC" customClass="OpenVC" customModule="party" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p0H-Fw-YTd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kei-aC-FKr">
+                                <rect key="frame" x="16" y="36" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="KLD-9e-ydd"/>
+                                    <constraint firstAttribute="width" constant="30" id="Tkm-CC-HAC"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="B3P-Pt-A5R"/>
+                                    <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="TyJ-y6-F8a"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open. 🔎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oT-DT-uTi">
+                                <rect key="frame" x="99" y="80" width="177" height="49"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="40"/>
+                                <color key="textColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Everything about Party is public, and transparent." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOb-97-0uA">
+                                <rect key="frame" x="12" y="137" width="351" height="49"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98429685831069946" green="0.97640484571456909" blue="0.98039323091506958" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="kei-aC-FKr" firstAttribute="leading" secondItem="Tc9-7Z-E0d" secondAttribute="leading" constant="16" id="6oR-fP-ZFG"/>
+                            <constraint firstItem="kei-aC-FKr" firstAttribute="top" secondItem="Tc9-7Z-E0d" secondAttribute="top" constant="16" id="U2V-QW-SdK"/>
+                            <constraint firstItem="5oT-DT-uTi" firstAttribute="centerX" secondItem="p0H-Fw-YTd" secondAttribute="centerX" id="XII-7J-XwI"/>
+                            <constraint firstItem="5oT-DT-uTi" firstAttribute="top" secondItem="Tc9-7Z-E0d" secondAttribute="top" constant="60" id="YO9-4l-B2l"/>
+                            <constraint firstItem="cOb-97-0uA" firstAttribute="top" secondItem="5oT-DT-uTi" secondAttribute="bottom" constant="8" id="bq0-gi-eoW"/>
+                            <constraint firstItem="cOb-97-0uA" firstAttribute="leading" secondItem="Tc9-7Z-E0d" secondAttribute="leading" constant="12" id="cxl-Ww-0oq"/>
+                            <constraint firstItem="Tc9-7Z-E0d" firstAttribute="trailing" secondItem="cOb-97-0uA" secondAttribute="trailing" constant="12" id="fQ1-K3-hAp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tc9-7Z-E0d"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fbG-Ks-XzO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2336" y="-563"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="Dlb-YL-9cg">
