@@ -23,6 +23,7 @@
 		0996BDE021A125FB0088D50B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDDF21A125FB0088D50B /* Assets.xcassets */; };
 		0996BDE321A125FB0088D50B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDE121A125FB0088D50B /* LaunchScreen.storyboard */; };
 		0996BDEC21A12B950088D50B /* Asap-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDEB21A12B950088D50B /* Asap-BoldItalic.ttf */; };
+		09A4651C21A38CAC001CE563 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A4651B21A38CAB001CE563 /* ForgotPasswordVC.swift */; };
 		09CE57D521A13ABD006B50EC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57D421A13ABD006B50EC /* LoginVC.swift */; };
 		09CE57D721A15D76006B50EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09CE57D621A15D76006B50EC /* GoogleService-Info.plist */; };
 		09CE57D921A16F45006B50EC /* SignupStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57D821A16F45006B50EC /* SignupStep1VC.swift */; };
@@ -53,6 +54,7 @@
 		0996BDE221A125FB0088D50B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0996BDE421A125FB0088D50B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0996BDEB21A12B950088D50B /* Asap-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-BoldItalic.ttf"; sourceTree = "<group>"; };
+		09A4651B21A38CAB001CE563 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		09CE57D421A13ABD006B50EC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		09CE57D621A15D76006B50EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09CE57D821A16F45006B50EC /* SignupStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep1VC.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				09CE57DE21A1F8A2006B50EC /* SignupStep3VC.swift */,
 				09CE57E021A1F8B1006B50EC /* SignupStep4VC.swift */,
 				09CE57E221A22CD6006B50EC /* MainVC.swift */,
+				09A4651B21A38CAB001CE563 /* ForgotPasswordVC.swift */,
 			);
 			path = party;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				09CE57DF21A1F8A2006B50EC /* SignupStep3VC.swift in Sources */,
 				09CE57D921A16F45006B50EC /* SignupStep1VC.swift in Sources */,
 				09CE57DB21A17437006B50EC /* SignupStep2VC.swift in Sources */,
+				09A4651C21A38CAC001CE563 /* ForgotPasswordVC.swift in Sources */,
 				09CE57E321A22CD6006B50EC /* MainVC.swift in Sources */,
 				09CE57E121A1F8B1006B50EC /* SignupStep4VC.swift in Sources */,
 				09CE57D521A13ABD006B50EC /* LoginVC.swift in Sources */,
@@ -478,7 +482,10 @@
 				DEVELOPMENT_TEAM = QKVT7MD2SK;
 				INFOPLIST_FILE = party/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.John-Leonardo.partyy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -495,7 +502,10 @@
 				DEVELOPMENT_TEAM = QKVT7MD2SK;
 				INFOPLIST_FILE = party/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.John-Leonardo.partyy";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

@@ -60,6 +60,68 @@
             </objects>
             <point key="canvasLocation" x="105" y="125"/>
         </scene>
+        <!--Forgot PasswordVC-->
+        <scene sceneID="jUU-CZ-EJe">
+            <objects>
+                <viewController id="z93-6P-Hef" customClass="ForgotPasswordVC" customModule="party" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RWg-Ib-ugV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops. 😳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8y-JK-9UI">
+                                <rect key="frame" x="102" y="80" width="171" height="49"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="40"/>
+                                <color key="textColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr3-ZL-ej4">
+                                <rect key="frame" x="16" y="36" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ma6-ik-Sva"/>
+                                    <constraint firstAttribute="width" constant="30" id="sqe-fL-LcW"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="h1C-yi-L4c"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It's okay. It happens to all of us. 🙃 Enter your email and I'll send you a password reset link." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3to-SH-xbo">
+                                <rect key="frame" x="16" y="137" width="343" height="73.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gg8-ia-yf6">
+                                <rect key="frame" x="16" y="318" width="343" height="31"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98429685831069946" green="0.97640484571456909" blue="0.98039323091506958" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Hr3-ZL-ej4" firstAttribute="leading" secondItem="bq3-oM-sgc" secondAttribute="leading" constant="16" id="6jJ-wH-aq4"/>
+                            <constraint firstItem="3to-SH-xbo" firstAttribute="leading" secondItem="bq3-oM-sgc" secondAttribute="leading" constant="16" id="9mm-fN-ibd"/>
+                            <constraint firstItem="gg8-ia-yf6" firstAttribute="leading" secondItem="bq3-oM-sgc" secondAttribute="leading" constant="16" id="AMy-kv-zsz"/>
+                            <constraint firstAttribute="trailing" secondItem="3to-SH-xbo" secondAttribute="trailing" constant="16" id="Mea-WR-Sk7"/>
+                            <constraint firstItem="R8y-JK-9UI" firstAttribute="centerX" secondItem="RWg-Ib-ugV" secondAttribute="centerX" id="PxC-AD-pdR"/>
+                            <constraint firstItem="R8y-JK-9UI" firstAttribute="top" secondItem="bq3-oM-sgc" secondAttribute="top" constant="60" id="VaP-MX-CnQ"/>
+                            <constraint firstItem="3to-SH-xbo" firstAttribute="top" secondItem="R8y-JK-9UI" secondAttribute="bottom" constant="8" id="WNx-wg-ddk"/>
+                            <constraint firstItem="bq3-oM-sgc" firstAttribute="trailing" secondItem="gg8-ia-yf6" secondAttribute="trailing" constant="16" id="WvL-uh-bpA"/>
+                            <constraint firstItem="Hr3-ZL-ej4" firstAttribute="top" secondItem="bq3-oM-sgc" secondAttribute="top" constant="16" id="v8g-8n-ag2"/>
+                            <constraint firstItem="gg8-ia-yf6" firstAttribute="centerY" secondItem="RWg-Ib-ugV" secondAttribute="centerY" id="zhO-CW-O0r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bq3-oM-sgc"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="gg8-ia-yf6" id="yWU-pN-13x"/>
+                        <segue destination="Gvx-Vv-HSL" kind="unwind" unwindAction="unwindToLoginWithSegue:" id="Mjk-bh-mE6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eGZ-h1-amo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Gvx-Vv-HSL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="889" y="-573"/>
+        </scene>
         <!--LoginVC-->
         <scene sceneID="Dlb-YL-9cg">
             <objects>
@@ -153,6 +215,7 @@
                         <outlet property="signupBtn" destination="lKI-sZ-c8n" id="VnG-Jh-gVl"/>
                         <segue destination="7Mi-AA-c9y" kind="show" identifier="goToSignup" id="UkR-qH-7hv"/>
                         <segue destination="ZDf-EM-NTZ" kind="show" identifier="goToMain0" id="Txr-De-KzJ"/>
+                        <segue destination="z93-6P-Hef" kind="show" identifier="goToForgotPassword" id="Cpf-Qs-38u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfg-7I-OPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -560,10 +623,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="409.60000610351562" height="409.60000610351562"/>
         <image name="menu" width="1024" height="1024"/>
         <image name="plus" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mRK-s9-8H8"/>
+        <segue reference="Txr-De-KzJ"/>
     </inferredMetricsTieBreakers>
 </document>
