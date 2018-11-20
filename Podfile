@@ -14,4 +14,5 @@ target 'party' do
   pod 'Firebase/Firestore'
   pod 'CircleMenu'
   pod 'Firebase/Storage'
+  pod 'Crisp'
 end

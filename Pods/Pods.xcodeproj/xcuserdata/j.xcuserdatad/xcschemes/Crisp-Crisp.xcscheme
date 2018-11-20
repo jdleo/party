@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "558913A9FCCD67D2F5C0B3E98734D1D9"
-               BuildableName = "SAConfettiView.bundle"
-               BlueprintName = "SAConfettiView-SAConfettiView"
+               BlueprintIdentifier = "8E1073B6A4364C841C0587D12024957A"
+               BuildableName = "Crisp.bundle"
+               BlueprintName = "Crisp-Crisp"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "558913A9FCCD67D2F5C0B3E98734D1D9"
-            BuildableName = "SAConfettiView.bundle"
-            BlueprintName = "SAConfettiView-SAConfettiView"
+            BlueprintIdentifier = "8E1073B6A4364C841C0587D12024957A"
+            BuildableName = "Crisp.bundle"
+            BlueprintName = "Crisp-Crisp"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

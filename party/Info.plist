@@ -56,5 +56,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Can Party have access to your photos?</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Can Party have access to your camera?</string>
 </dict>
 </plist>

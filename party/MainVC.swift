@@ -82,6 +82,8 @@ class MainVC: UIViewController, CircleMenuDelegate {
         }
     }
     
+    @IBAction func unwindToMain(segue:UIStoryboardSegue) { }
+    
     func downloadMyProfilePic() {
         if let uid = Auth.auth().currentUser?.uid {
             let storage = Storage.storage().reference()
@@ -135,6 +137,10 @@ class MainVC: UIViewController, CircleMenuDelegate {
             switch (atIndex) {
             case 0:
                 //do nothing, we're already home
+                break
+            case 3:
+                //go to settings
+                self.performSegue(withIdentifier: "goToSettings", sender: nil)
                 break
             case 4:
                 //logout

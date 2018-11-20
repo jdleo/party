@@ -17,6 +17,7 @@
 		0900CEB121A135CA00EF3A75 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0900CEA721A135CA00EF3A75 /* Montserrat-Regular.ttf */; };
 		0900CEB221A135CA00EF3A75 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0900CEA821A135CA00EF3A75 /* Montserrat-Bold.ttf */; };
 		0900CEB321A135CA00EF3A75 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0900CEA921A135CA00EF3A75 /* Montserrat-Medium.ttf */; };
+		0966ABB321A3D27400B7BDEF /* CrispVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966ABB221A3D27400B7BDEF /* CrispVC.swift */; };
 		0996BDD921A125F90088D50B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996BDD821A125F90088D50B /* AppDelegate.swift */; };
 		0996BDDB21A125F90088D50B /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996BDDA21A125F90088D50B /* LaunchVC.swift */; };
 		0996BDDE21A125F90088D50B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDDC21A125F90088D50B /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		0996BDE321A125FB0088D50B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDE121A125FB0088D50B /* LaunchScreen.storyboard */; };
 		0996BDEC21A12B950088D50B /* Asap-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDEB21A12B950088D50B /* Asap-BoldItalic.ttf */; };
 		09A4651C21A38CAC001CE563 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A4651B21A38CAB001CE563 /* ForgotPasswordVC.swift */; };
+		09AF112121A3B9EC003EAC06 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09AF112021A3B9EC003EAC06 /* SettingsVC.swift */; };
 		09CE57D521A13ABD006B50EC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57D421A13ABD006B50EC /* LoginVC.swift */; };
 		09CE57D721A15D76006B50EC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09CE57D621A15D76006B50EC /* GoogleService-Info.plist */; };
 		09CE57D921A16F45006B50EC /* SignupStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CE57D821A16F45006B50EC /* SignupStep1VC.swift */; };
@@ -46,6 +48,7 @@
 		0900CEA721A135CA00EF3A75 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		0900CEA821A135CA00EF3A75 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		0900CEA921A135CA00EF3A75 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		0966ABB221A3D27400B7BDEF /* CrispVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrispVC.swift; sourceTree = "<group>"; };
 		0996BDD521A125F90088D50B /* party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = party.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0996BDD821A125F90088D50B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0996BDDA21A125F90088D50B /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		0996BDE421A125FB0088D50B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0996BDEB21A12B950088D50B /* Asap-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Asap-BoldItalic.ttf"; sourceTree = "<group>"; };
 		09A4651B21A38CAB001CE563 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		09AF112021A3B9EC003EAC06 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		09CE57D421A13ABD006B50EC /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		09CE57D621A15D76006B50EC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09CE57D821A16F45006B50EC /* SignupStep1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupStep1VC.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				09CE57E021A1F8B1006B50EC /* SignupStep4VC.swift */,
 				09CE57E221A22CD6006B50EC /* MainVC.swift */,
 				09A4651B21A38CAB001CE563 /* ForgotPasswordVC.swift */,
+				09AF112021A3B9EC003EAC06 /* SettingsVC.swift */,
+				0966ABB221A3D27400B7BDEF /* CrispVC.swift */,
 			);
 			path = party;
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-party/Pods-party-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleMenu/CircleMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Crisp/Crisp.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -265,6 +272,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Crisp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -327,11 +335,13 @@
 				0996BDD921A125F90088D50B /* AppDelegate.swift in Sources */,
 				09CE57DF21A1F8A2006B50EC /* SignupStep3VC.swift in Sources */,
 				09CE57D921A16F45006B50EC /* SignupStep1VC.swift in Sources */,
+				0966ABB321A3D27400B7BDEF /* CrispVC.swift in Sources */,
 				09CE57DB21A17437006B50EC /* SignupStep2VC.swift in Sources */,
 				09A4651C21A38CAC001CE563 /* ForgotPasswordVC.swift in Sources */,
 				09CE57E321A22CD6006B50EC /* MainVC.swift in Sources */,
 				09CE57E121A1F8B1006B50EC /* SignupStep4VC.swift in Sources */,
 				09CE57D521A13ABD006B50EC /* LoginVC.swift in Sources */,
+				09AF112121A3B9EC003EAC06 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

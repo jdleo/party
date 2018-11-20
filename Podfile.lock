@@ -6,6 +6,7 @@ PODS:
     - BoringSSL/Interface (= 10.0.3)
   - BoringSSL/Interface (10.0.3)
   - CircleMenu (3.0.6)
+  - Crisp (0.1.12)
   - Firebase/Auth (5.0.1):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.0)
@@ -84,6 +85,7 @@ PODS:
 
 DEPENDENCIES:
   - CircleMenu
+  - Crisp
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
@@ -95,6 +97,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   BoringSSL: c46efb47593135382bc0934196f16d2f726f5f36
   CircleMenu: 743ac815475e8e40e8848d2954fa7f7263d9f78d
+  Crisp: c957983b131baa9cb10b841abd1ad2e340763006
   Firebase: d6861c2059d8c32d1e6dd8932e22ada346d90a3a
   FirebaseAnalytics: 19812b49fa5f283dd6b23edf8a14b5d477029ab8
   FirebaseAuth: acbeef02fe7c3a26624e309849f3fe30c84115af
@@ -115,6 +118,6 @@ SPEC CHECKSUMS:
   SwiftMessages: 2c33fdee8b8f38dfc7e1036684456b505891da8c
   YXWaveView: 3570d7244b08effd077a5c63b0693aa44b7cd369
 
-PODFILE CHECKSUM: bf90970df5ed59594c74c2e8021bc0ae6b223d08
+PODFILE CHECKSUM: 651d15999cc530b2dbb2ac4ecc7857f7c3565d98
 
 COCOAPODS: 1.4.0
