@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftMessages
 
 class SettingsVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -19,6 +20,7 @@ class SettingsVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBOutlet weak var card6: UIView!
     @IBOutlet weak var card7: UIView!
     @IBOutlet weak var profilePic: UIImageView!
+    @IBOutlet weak var privateSwitch: UISwitch!
     
     //instatiate image picker controller
     let imagePicker = UIImagePickerController()
@@ -36,6 +38,10 @@ class SettingsVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         card1.addGestureRecognizer(tap1)
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(changeProfilePicTapped))
         card2.addGestureRecognizer(tap2)
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(changeUsernameTapped))
+        card3.addGestureRecognizer(tap3)
+        let tap4 = UITapGestureRecognizer(target: self, action: #selector(changePasswordTapped))
+        card4.addGestureRecognizer(tap4)
         
         //style profile pic view
         profilePic.layer.cornerRadius = profilePic.frame.size.width/2
@@ -63,6 +69,7 @@ class SettingsVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     }
 
     @IBAction func unwindToSettings(segue:UIStoryboardSegue) { }
+    @IBAction func unwindToSettings2(segue:UIStoryboardSegue) { }
     
     func downloadUserData() {
         if let uid = Auth.auth().currentUser?.uid {
@@ -109,6 +116,40 @@ class SettingsVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         self.performSegue(withIdentifier: "goToCrisp", sender: nil)
     }
     
+    @objc func changeUsernameTapped() {
+        self.performSegue(withIdentifier: "goToChangeUsername", sender: nil)
+    }
+    
+    @objc func changePasswordTapped() {
+        if let user = Auth.auth().currentUser {
+            Auth.auth().sendPasswordReset(withEmail: user.email ?? "error") { (error) in
+                if error != nil {
+                    let view = MessageView.viewFromNib(layout: .centeredView)
+                    view.configureTheme(.error)
+                    view.configureDropShadow()
+                    view.button?.isHidden = true
+                    view.configureContent(title: "Oops", body: error?.localizedDescription ?? "Something went wrong", iconText:"😓")
+                    view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+                    var config = SwiftMessages.Config()
+                    config.presentationStyle = .center
+                    config.duration = .seconds(seconds: 2)
+                    SwiftMessages.show(config: config, view: view)
+                } else {
+                    let view = MessageView.viewFromNib(layout: .centeredView)
+                    view.configureTheme(.success)
+                    view.configureDropShadow()
+                    view.button?.isHidden = true
+                    view.configureContent(title: "Success", body: "A password reset link has been sent to your email! Be sure to check Junk mail.", iconText:"🎉")
+                    view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+                    var config = SwiftMessages.Config()
+                    config.presentationStyle = .center
+                    config.duration = .seconds(seconds: 2)
+                    SwiftMessages.show(config: config, view: view)
+                }
+            }
+        }
+    }
+    
     @objc func changeProfilePicTapped() {
         let alertController = UIAlertController(title: "Change profile picture", message: "Select an option below.", preferredStyle: .actionSheet)
         
@@ -143,4 +184,18 @@ class SettingsVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func switchChanged(_ sender: Any) {
+        let view = MessageView.viewFromNib(layout: .centeredView)
+        view.configureTheme(.info)
+        view.configureDropShadow()
+        view.button?.isHidden = true
+        view.configureContent(title: "Soon", body: "Profile privacy hasn't been shipped yet. Look out for it in a future update!", iconText:"🚢")
+        view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        var config = SwiftMessages.Config()
+        config.presentationStyle = .center
+        config.duration = .seconds(seconds: 2)
+        SwiftMessages.show(config: config, view: view)
+    }
+    
 }

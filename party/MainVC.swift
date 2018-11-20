@@ -10,6 +10,7 @@ import UIKit
 import CircleMenu
 import Firebase
 import SwiftMessages
+import Crisp
 
 class MainVC: UIViewController, CircleMenuDelegate {
     
@@ -69,6 +70,7 @@ class MainVC: UIViewController, CircleMenuDelegate {
     
     func downloadMyData() {
         if let uid = Auth.auth().currentUser?.uid {
+            Crisp.user.set(email: Auth.auth().currentUser?.email ?? "default@default.io")
             let db = Firestore.firestore()
             let userRef = db.collection("users").document(uid)
             userRef.getDocument { (snap, error) in
@@ -142,6 +144,19 @@ class MainVC: UIViewController, CircleMenuDelegate {
             case 0:
                 //do nothing, we're already home
                 break
+            case 2:
+                //inbox, for now, no functionality
+                let view = MessageView.viewFromNib(layout: .centeredView)
+                view.configureTheme(.info)
+                view.configureDropShadow()
+                view.button?.isHidden = true
+                view.configureContent(title: "Soon", body: "Direct messaging hasn't shipped yet. Look out for it in a future update!", iconText:"🚢")
+                view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+                var config = SwiftMessages.Config()
+                config.presentationStyle = .center
+                config.duration = .seconds(seconds: 2)
+                SwiftMessages.show(config: config, view: view)
+                break
             case 3:
                 //go to settings
                 self.performSegue(withIdentifier: "goToSettings", sender: nil)
@@ -149,6 +164,8 @@ class MainVC: UIViewController, CircleMenuDelegate {
             case 4:
                 //logout
                 try! Auth.auth().signOut()
+                //reset crisp session
+                Crisp.session.reset()
                 let view = MessageView.viewFromNib(layout: .centeredView)
                 view.configureTheme(.success)
                 view.configureDropShadow()

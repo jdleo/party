@@ -164,6 +164,69 @@
             </objects>
             <point key="canvasLocation" x="1613.5999999999999" y="-1572.8635682158922"/>
         </scene>
+        <!--Change UsernameVC-->
+        <scene sceneID="HTD-Aw-aHl">
+            <objects>
+                <viewController id="mCy-D8-ZgM" customClass="ChangeUsernameVC" customModule="party" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GFG-Yx-XYs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWc-6n-ErO">
+                                <rect key="frame" x="16" y="36" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="BJg-mL-qBv"/>
+                                    <constraint firstAttribute="height" constant="30" id="dsD-2r-Nsd"/>
+                                </constraints>
+                                <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="aeJ-Z9-qI1"/>
+                                    <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="cJh-ib-QQ2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's go! 🎉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUj-AX-ERm">
+                                <rect key="frame" x="75" y="80" width="225.5" height="49"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="40"/>
+                                <color key="textColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to change your username to? 🤔" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrN-7d-iQL">
+                                <rect key="frame" x="16" y="137" width="343" height="49"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vhZ-tx-iJY">
+                                <rect key="frame" x="16" y="318" width="343" height="31"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="y1c-rE-qgq" firstAttribute="trailing" secondItem="vhZ-tx-iJY" secondAttribute="trailing" constant="16" id="Ey3-6M-YMC"/>
+                            <constraint firstItem="NrN-7d-iQL" firstAttribute="top" secondItem="KUj-AX-ERm" secondAttribute="bottom" constant="8" id="KRw-Xp-niS"/>
+                            <constraint firstItem="nWc-6n-ErO" firstAttribute="top" secondItem="y1c-rE-qgq" secondAttribute="top" constant="16" id="V6n-gX-0qE"/>
+                            <constraint firstItem="vhZ-tx-iJY" firstAttribute="leading" secondItem="y1c-rE-qgq" secondAttribute="leading" constant="16" id="aTk-q3-U28"/>
+                            <constraint firstItem="KUj-AX-ERm" firstAttribute="top" secondItem="y1c-rE-qgq" secondAttribute="top" constant="60" id="bon-ua-P5v"/>
+                            <constraint firstItem="NrN-7d-iQL" firstAttribute="leading" secondItem="GFG-Yx-XYs" secondAttribute="leading" constant="16" id="dcA-rZ-JEv"/>
+                            <constraint firstItem="vhZ-tx-iJY" firstAttribute="centerY" secondItem="GFG-Yx-XYs" secondAttribute="centerY" id="pmY-UP-71p"/>
+                            <constraint firstItem="nWc-6n-ErO" firstAttribute="leading" secondItem="y1c-rE-qgq" secondAttribute="leading" constant="16" id="qsq-Kg-Ok5"/>
+                            <constraint firstItem="KUj-AX-ERm" firstAttribute="centerX" secondItem="GFG-Yx-XYs" secondAttribute="centerX" id="sfd-JV-B7a"/>
+                            <constraint firstItem="y1c-rE-qgq" firstAttribute="trailing" secondItem="NrN-7d-iQL" secondAttribute="trailing" constant="16" id="uEg-70-Yzr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y1c-rE-qgq"/>
+                    </view>
+                    <connections>
+                        <outlet property="usernameField" destination="vhZ-tx-iJY" id="FLM-Ai-Uw8"/>
+                        <segue destination="NJh-Gw-Xf4" kind="unwind" unwindAction="unwindToSettings2WithSegue:" id="MN9-O1-TiA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="27c-xs-RIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="NJh-Gw-Xf4" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2360" y="-1332"/>
+        </scene>
         <!--SettingsVC-->
         <scene sceneID="8vT-UQ-zhC">
             <objects>
@@ -288,6 +351,9 @@
                                                             <constraint firstAttribute="height" constant="31" id="Obi-cu-Q4d"/>
                                                         </constraints>
                                                         <color key="onTintColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <connections>
+                                                            <action selector="switchChanged:" destination="WrP-aT-uuU" eventType="valueChanged" id="Af1-zr-sVe"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -435,9 +501,11 @@
                         <outlet property="card5" destination="tpF-3a-IIT" id="Nll-TV-m7q"/>
                         <outlet property="card6" destination="i1X-IZ-0wG" id="H4O-6h-boM"/>
                         <outlet property="card7" destination="wxe-oT-5MN" id="IMi-XR-VOh"/>
+                        <outlet property="privateSwitch" destination="9aZ-KN-KDj" id="ybr-5C-8jC"/>
                         <outlet property="profilePic" destination="PhM-N5-oKC" id="if1-Uz-CL6"/>
                         <segue destination="E59-8M-GQ8" kind="unwind" unwindAction="unwindToMainWithSegue:" id="2Tx-JB-L1T"/>
                         <segue destination="bcn-DW-djY" kind="show" identifier="goToCrisp" id="PRG-7A-yrZ"/>
+                        <segue destination="mCy-D8-ZgM" kind="show" identifier="goToChangeUsername" id="vi5-Bi-x2y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXB-iK-GLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -985,6 +1053,6 @@
         <image name="right-arrow" width="204.80000305175781" height="204.80000305175781"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Txr-De-KzJ"/>
+        <segue reference="mRK-s9-8H8"/>
     </inferredMetricsTieBreakers>
 </document>
