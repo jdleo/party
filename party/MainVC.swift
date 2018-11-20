@@ -10,6 +10,7 @@ import UIKit
 import CircleMenu
 import Firebase
 import SwiftMessages
+import Crisp
 
 class MainVC: UIViewController, CircleMenuDelegate {
     
@@ -37,7 +38,6 @@ class MainVC: UIViewController, CircleMenuDelegate {
         
         //download user data
         self.downloadMyData()
-        self.downloadMyProfilePic()
 
         //style the top card
         topCard.layer.cornerRadius = 5.0
@@ -63,8 +63,14 @@ class MainVC: UIViewController, CircleMenuDelegate {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        //download user profile pic
+        self.downloadMyProfilePic()
+    }
+    
     func downloadMyData() {
         if let uid = Auth.auth().currentUser?.uid {
+            Crisp.user.set(email: Auth.auth().currentUser?.email ?? "default@default.io")
             let db = Firestore.firestore()
             let userRef = db.collection("users").document(uid)
             userRef.getDocument { (snap, error) in
@@ -81,6 +87,8 @@ class MainVC: UIViewController, CircleMenuDelegate {
             }
         }
     }
+    
+    @IBAction func unwindToMain(segue:UIStoryboardSegue) { }
     
     func downloadMyProfilePic() {
         if let uid = Auth.auth().currentUser?.uid {
@@ -127,6 +135,31 @@ class MainVC: UIViewController, CircleMenuDelegate {
             }
         } else if circleMenu.buttonsCount == 6 {
             //this is for post button
+            switch (atIndex) {
+            case 0:
+                button.setImage(UIImage(named: "textpost.png"), for: .normal)
+                button.backgroundColor = UIColor(red:0.96, green:0.26, blue:0.21, alpha:1.0)
+                break
+            case 1:
+                button.setImage(UIImage(named: "photo.png"), for: .normal)
+                button.backgroundColor = UIColor(red:0.13, green:0.59, blue:0.95, alpha:1.0)
+                break
+            case 2:
+                button.setImage(UIImage(named: "song.pmg"), for: .normal)
+                button.backgroundColor = UIColor(red:0.30, green:0.69, blue:0.31, alpha:1.0)
+                break
+            case 3:
+                button.setImage(UIImage(named: "food.png"), for: .normal)
+                button.backgroundColor = UIColor(red:1.00, green:0.92, blue:0.23, alpha:1.0)
+                break
+            case 4:
+                button.setImage(UIImage(named: "tv.png"), for: .normal)
+                button.backgroundColor = UIColor(red:1.00, green:0.34, blue:0.13, alpha:1.0)
+            default:
+                button.setImage(UIImage(named: "poll.png"), for: .normal)
+                button.backgroundColor = UIColor(red:0.61, green:0.15, blue:0.69, alpha:1.0)
+                break
+            }
         }
     }
     
@@ -136,9 +169,28 @@ class MainVC: UIViewController, CircleMenuDelegate {
             case 0:
                 //do nothing, we're already home
                 break
+            case 2:
+                //inbox, for now, no functionality
+                let view = MessageView.viewFromNib(layout: .centeredView)
+                view.configureTheme(.info)
+                view.configureDropShadow()
+                view.button?.isHidden = true
+                view.configureContent(title: "Soon", body: "Direct messaging hasn't shipped yet. Look out for it in a future update!", iconText:"🚢")
+                view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+                var config = SwiftMessages.Config()
+                config.presentationStyle = .center
+                config.duration = .seconds(seconds: 2)
+                SwiftMessages.show(config: config, view: view)
+                break
+            case 3:
+                //go to settings
+                self.performSegue(withIdentifier: "goToSettings", sender: nil)
+                break
             case 4:
                 //logout
                 try! Auth.auth().signOut()
+                //reset crisp session
+                Crisp.session.reset()
                 let view = MessageView.viewFromNib(layout: .centeredView)
                 view.configureTheme(.success)
                 view.configureDropShadow()
@@ -155,6 +207,7 @@ class MainVC: UIViewController, CircleMenuDelegate {
             }
         } else if circleMenu.buttonsCount == 6 {
             //this is the post button
+            print(atIndex)
         }
     }
     

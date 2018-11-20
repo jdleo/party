@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Crisp
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //necessary for firebase SDK
         FirebaseApp.configure()
+        
+        //Crisp SDK
+        Crisp.initialize(websiteId: "a0b115d5-b865-4327-b5a9-02b4e8276202")
         
         //for debugging only
         //try! Auth.auth().signOut()

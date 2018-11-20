@@ -1,0 +1,6 @@
+framework module Crisp {
+  umbrella header "Crisp-umbrella.h"
+
+  export *
+  module * { export * }
+}

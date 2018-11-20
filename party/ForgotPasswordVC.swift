@@ -42,7 +42,7 @@ class ForgotPasswordVC: UIViewController, UITextFieldDelegate {
                     view.configureTheme(.success)
                     view.configureDropShadow()
                     view.button?.isHidden = true
-                    view.configureContent(title: "Success", body: "I sent a password reset link to your email!", iconText:"🎉")
+                    view.configureContent(title: "Success", body: "I sent a password reset link to your email! Be sure to check Junk mail.", iconText:"🎉")
                     view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
                     var config = SwiftMessages.Config()
                     config.presentationStyle = .center
