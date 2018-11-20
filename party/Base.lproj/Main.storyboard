@@ -422,9 +422,11 @@
                         <outlet property="tableView" destination="St2-G5-EFd" id="35o-Q4-oO2"/>
                         <outlet property="tellAFriendBtn" destination="GOR-Ys-C7f" id="j0X-Md-wsR"/>
                         <outlet property="topCard" destination="FWi-3h-3jp" id="LXx-VG-jpf"/>
+                        <segue destination="4q9-ps-hSV" kind="unwind" unwindAction="unwindToLogin2WithSegue:" id="Lv4-dy-eRF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NE6-oX-Ao8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4q9-ps-hSV" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1613.5999999999999" y="124.58770614692655"/>
         </scene>

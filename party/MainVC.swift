@@ -8,6 +8,8 @@
 
 import UIKit
 import CircleMenu
+import Firebase
+import SwiftMessages
 
 class MainVC: UIViewController, CircleMenuDelegate {
     
@@ -80,7 +82,24 @@ class MainVC: UIViewController, CircleMenuDelegate {
     
     func circleMenu(_ circleMenu: CircleMenu, buttonDidSelected button: UIButton, atIndex: Int) {
         if circleMenu.buttonsCount == 5 {
-            //this is the menu button
+            switch (atIndex) {
+            case 4:
+                //logout
+                try! Auth.auth().signOut()
+                let view = MessageView.viewFromNib(layout: .centeredView)
+                view.configureTheme(.success)
+                view.configureDropShadow()
+                view.button?.isHidden = true
+                view.configureContent(title: "Logged Out", body: "You have successfully logged out", iconText:"👍")
+                view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+                var config = SwiftMessages.Config()
+                config.presentationStyle = .center
+                config.duration = .seconds(seconds: 2)
+                SwiftMessages.show(config: config, view: view)
+                self.dismiss(animated: true, completion: nil)
+            default:
+                break
+            }
         } else if circleMenu.buttonsCount == 6 {
             //this is the post button
         }

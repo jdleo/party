@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         //for debugging only
-        try! Auth.auth().signOut()
+        //try! Auth.auth().signOut()
         
         return true
     }
