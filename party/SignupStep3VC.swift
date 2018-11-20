@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftMessages
-import FirebaseFirestore
+import Firebase
 
 class SignupStep3VC: UIViewController, UITextFieldDelegate {
     

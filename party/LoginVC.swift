@@ -82,8 +82,12 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func unwindToLogin(segue:UIStoryboardSegue) { }
+    @IBAction func unwindToLogin2(segue:UIStoryboardSegue) { }
+    
     @IBAction func attemptForgotPassword(_ sender: Any) {
-        
+        //trigger segue
+        self.performSegue(withIdentifier: "goToForgotPassword", sender: nil)
     }
     
     @IBAction func attemptSignup(_ sender: Any) {

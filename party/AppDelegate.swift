@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //necessary for firebase SDK
         FirebaseApp.configure()
         
+        //for debugging only
+        //try! Auth.auth().signOut()
+        
         return true
     }
 
