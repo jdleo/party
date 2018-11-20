@@ -37,7 +37,6 @@ class MainVC: UIViewController, CircleMenuDelegate {
         
         //download user data
         self.downloadMyData()
-        self.downloadMyProfilePic()
 
         //style the top card
         topCard.layer.cornerRadius = 5.0
@@ -61,6 +60,11 @@ class MainVC: UIViewController, CircleMenuDelegate {
         menuBtn.customSelectedIconView?.frame.size = CGSize(width: 40, height: 40)
         menuBtn.customSelectedIconView?.contentMode = .scaleAspectFit
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //download user profile pic
+        self.downloadMyProfilePic()
     }
     
     func downloadMyData() {
