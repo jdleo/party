@@ -135,6 +135,31 @@ class MainVC: UIViewController, CircleMenuDelegate {
             }
         } else if circleMenu.buttonsCount == 6 {
             //this is for post button
+            switch (atIndex) {
+            case 0:
+                button.setImage(UIImage(named: "textpost.png"), for: .normal)
+                button.backgroundColor = UIColor(red:0.96, green:0.26, blue:0.21, alpha:1.0)
+                break
+            case 1:
+                button.setImage(UIImage(named: "photo.png"), for: .normal)
+                button.backgroundColor = UIColor(red:0.13, green:0.59, blue:0.95, alpha:1.0)
+                break
+            case 2:
+                button.setImage(UIImage(named: "song.pmg"), for: .normal)
+                button.backgroundColor = UIColor(red:0.30, green:0.69, blue:0.31, alpha:1.0)
+                break
+            case 3:
+                button.setImage(UIImage(named: "food.png"), for: .normal)
+                button.backgroundColor = UIColor(red:1.00, green:0.92, blue:0.23, alpha:1.0)
+                break
+            case 4:
+                button.setImage(UIImage(named: "tv.png"), for: .normal)
+                button.backgroundColor = UIColor(red:1.00, green:0.34, blue:0.13, alpha:1.0)
+            default:
+                button.setImage(UIImage(named: "poll.png"), for: .normal)
+                button.backgroundColor = UIColor(red:0.61, green:0.15, blue:0.69, alpha:1.0)
+                break
+            }
         }
     }
     
@@ -182,6 +207,7 @@ class MainVC: UIViewController, CircleMenuDelegate {
             }
         } else if circleMenu.buttonsCount == 6 {
             //this is the post button
+            print(atIndex)
         }
     }
     

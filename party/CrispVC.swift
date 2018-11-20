@@ -18,7 +18,7 @@ class CrispVC: UIViewController {
 
         //set up bounds for crisp chat
         crisp.center = view.center
-        crisp.bounds = CGRect(x: view.frame.minX, y: view.frame.minY, width: view.frame.width, height: view.frame.height - 150)
+        crisp.bounds = CGRect(x: view.frame.minX, y: view.frame.minY + 20, width: view.frame.width, height: view.frame.height - 150)
         view.addSubview(crisp)
     }
     
