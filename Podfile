@@ -15,4 +15,5 @@ target 'party' do
   pod 'CircleMenu'
   pod 'Firebase/Storage'
   pod 'Crisp'
+  pod 'YPImagePicker'
 end

@@ -60,5 +60,7 @@
 	<string>Can Party have access to your photos?</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Can Party have access to your camera?</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Can Party have access to your microphone?</string>
 </dict>
 </plist>

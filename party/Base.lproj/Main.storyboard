@@ -937,6 +937,20 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLq-5q-PmR">
                                 <rect key="frame" x="0.0" y="142" width="375" height="525"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMj-fl-g7y">
+                                        <rect key="frame" x="70" y="20" width="234" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                        <state key="normal" title="Select Photo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openPhotoPicker:" destination="u6y-4i-8xI" eventType="touchUpInside" id="P8C-p4-oLl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -955,13 +969,14 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="hLq-5q-PmR" id="Fjc-ya-oGb"/>
+                        <outlet property="selectPhotoBtn" destination="gMj-fl-g7y" id="mgu-Oz-L1A"/>
                         <segue destination="QtS-OJ-7gX" kind="unwind" unwindAction="unwindToMain2WithSegue:" id="SaA-cr-Pbw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24B-TL-LC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="QtS-OJ-7gX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4137" y="-394"/>
+            <point key="canvasLocation" x="4136.8000000000002" y="-394.45277361319341"/>
         </scene>
         <!--Compose SongVC-->
         <scene sceneID="6YY-CD-M0O">

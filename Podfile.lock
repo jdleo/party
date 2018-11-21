@@ -77,10 +77,15 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
+  - PryntTrimmerView (2.0.1)
   - SAConfettiView (0.1.8)
+  - SteviaLayout (4.2.0)
   - SwiftMessages (4.1.4):
     - SwiftMessages/App (= 4.1.4)
   - SwiftMessages/App (4.1.4)
+  - YPImagePicker (3.0.0):
+    - PryntTrimmerView (~> 2.0)
+    - SteviaLayout (~> 4.2.0)
   - YXWaveView (0.5.0)
 
 DEPENDENCIES:
@@ -92,6 +97,7 @@ DEPENDENCIES:
   - Firebase/Storage
   - SAConfettiView
   - SwiftMessages
+  - YPImagePicker
   - YXWaveView
 
 SPEC CHECKSUMS:
@@ -114,10 +120,13 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  PryntTrimmerView: 4260ae497a2f3e1bbfc0b71247eb74ab92bf0490
   SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
+  SteviaLayout: 0d2112caea45707695e8c718262c8ea3dd37ef17
   SwiftMessages: 2c33fdee8b8f38dfc7e1036684456b505891da8c
+  YPImagePicker: 817ae068f084a6f132312e66255347d1ce82782d
   YXWaveView: 3570d7244b08effd077a5c63b0693aa44b7cd369
 
-PODFILE CHECKSUM: 651d15999cc530b2dbb2ac4ecc7857f7c3565d98
+PODFILE CHECKSUM: a0f1663dd0bac5287e525d220821cb92faa29cbe
 
 COCOAPODS: 1.4.0
