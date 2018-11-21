@@ -13,6 +13,7 @@ class ComposePhotoVC: UIViewController {
 
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var selectPhotoBtn: UIButton!
+    @IBOutlet weak var pendingPhoto: UIImageView!
     
     var imagePicker = YPImagePicker()
     
@@ -25,6 +26,10 @@ class ComposePhotoVC: UIViewController {
         //style card view
         //cardView.layer.masksToBounds = true
         cardView.roundCorners([.topRight, .topLeft], radius: 20)
+        
+        //style photo view
+        pendingPhoto.layer.cornerRadius = 10
+        pendingPhoto.clipsToBounds = true
         
         
         //configure ypimagepicker
@@ -42,7 +47,7 @@ class ComposePhotoVC: UIViewController {
             for item in items {
                 switch item {
                 case .photo(let photo):
-                    print(photo)
+                    self.pendingPhoto.image = photo.image
                 case .video(let video):
                     print(video)
                 }
