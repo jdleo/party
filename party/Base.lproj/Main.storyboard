@@ -1207,7 +1207,29 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V90-Nb-63w">
                                 <rect key="frame" x="0.0" y="142" width="375" height="525"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdB-BE-fJI">
+                                        <rect key="frame" x="16" y="40" width="343" height="485"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXx-Ii-N0s">
+                                        <rect key="frame" x="316" y="8" width="43" height="18"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                        <color key="textColor" red="0.29803921570000003" green="0.68627450980000004" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MdB-BE-fJI" secondAttribute="trailing" constant="16" id="6Rf-ju-8n3"/>
+                                    <constraint firstItem="MdB-BE-fJI" firstAttribute="leading" secondItem="V90-Nb-63w" secondAttribute="leading" constant="16" id="9A2-PE-yWR"/>
+                                    <constraint firstAttribute="trailing" secondItem="FXx-Ii-N0s" secondAttribute="trailing" constant="16" id="Zk7-mB-NxY"/>
+                                    <constraint firstAttribute="bottom" secondItem="MdB-BE-fJI" secondAttribute="bottom" id="gaf-1Q-dD2"/>
+                                    <constraint firstItem="MdB-BE-fJI" firstAttribute="top" secondItem="V90-Nb-63w" secondAttribute="top" constant="40" id="jna-ab-Yzf"/>
+                                    <constraint firstItem="FXx-Ii-N0s" firstAttribute="top" secondItem="V90-Nb-63w" secondAttribute="top" constant="8" id="kf2-gV-8l8"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.2627450980392157" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1225,13 +1247,16 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="V90-Nb-63w" id="Q2N-tK-RsK"/>
+                        <outlet property="constraintOutlet" destination="gaf-1Q-dD2" id="Dvl-dJ-Nlc"/>
+                        <outlet property="textCountLbl" destination="FXx-Ii-N0s" id="vGH-98-nfs"/>
+                        <outlet property="textView" destination="MdB-BE-fJI" id="ZwL-2S-tGw"/>
                         <segue destination="cmJ-pM-yzB" kind="unwind" unwindAction="unwindToMain2WithSegue:" id="juV-W2-OkE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u3i-JJ-rrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="cmJ-pM-yzB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3308" y="-636"/>
+            <point key="canvasLocation" x="3308" y="-636.4317841079461"/>
         </scene>
         <!--Signup Step1VC-->
         <scene sceneID="qId-1u-ayO">
