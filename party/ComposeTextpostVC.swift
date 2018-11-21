@@ -60,6 +60,9 @@ class ComposeTextpostVC: UIViewController, UITextViewDelegate {
                     //create reference to this user
                     let userRef = db.collection("users").document(uid)
                     
+                    //create reference to this user's posts
+                    let postRef = db.collection("posts").document(uid).collection("posts").document()
+                    
                     //update 'lastStatus' and 'status' fields in user document
                     var status = textView.text.prefix(20)
                     
@@ -67,8 +70,15 @@ class ComposeTextpostVC: UIViewController, UITextViewDelegate {
                         status = status + "..."
                     }
                     
-                    batch.setData(["status": "📝 " + status, "lastStatus": Timestamp.init()], forDocument: userRef, merge: true)
+                    let timestamp = Timestamp.init()
                     
+                    //update status data in user document
+                    batch.setData(["status": "📝 " + status, "lastStatus": timestamp], forDocument: userRef, merge: true)
+                    
+                    //update post data in user posts document
+                    batch.setData(["type": "textpost", "body": textView.text, "created_at": timestamp], forDocument: postRef)
+                    
+                    //commit batch to database
                     batch.commit { (error) in
                         if error != nil {
                             //error, handle
