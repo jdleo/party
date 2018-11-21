@@ -20,6 +20,12 @@
 		0966ABB321A3D27400B7BDEF /* CrispVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966ABB221A3D27400B7BDEF /* CrispVC.swift */; };
 		0966ABB521A3F6F900B7BDEF /* ChangeUsernameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966ABB421A3F6F900B7BDEF /* ChangeUsernameVC.swift */; };
 		0966ABB921A401DE00B7BDEF /* OpenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966ABB821A401DE00B7BDEF /* OpenVC.swift */; };
+		0966ABBD21A4CFBD00B7BDEF /* ComposeTextpostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966ABBC21A4CFBD00B7BDEF /* ComposeTextpostVC.swift */; };
+		0966ABBF21A4DEF100B7BDEF /* ComposePhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966ABBE21A4DEF100B7BDEF /* ComposePhotoVC.swift */; };
+		0966ABC121A4DF1F00B7BDEF /* ComposeSongVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966ABC021A4DF1F00B7BDEF /* ComposeSongVC.swift */; };
+		0966ABC321A4DF2D00B7BDEF /* ComposeFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966ABC221A4DF2D00B7BDEF /* ComposeFoodVC.swift */; };
+		0966ABC521A4DF3A00B7BDEF /* ComposeTvVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966ABC421A4DF3A00B7BDEF /* ComposeTvVC.swift */; };
+		0966ABC721A4DF4700B7BDEF /* ComposePollVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966ABC621A4DF4700B7BDEF /* ComposePollVC.swift */; };
 		0996BDD921A125F90088D50B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996BDD821A125F90088D50B /* AppDelegate.swift */; };
 		0996BDDB21A125F90088D50B /* LaunchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0996BDDA21A125F90088D50B /* LaunchVC.swift */; };
 		0996BDDE21A125F90088D50B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0996BDDC21A125F90088D50B /* Main.storyboard */; };
@@ -53,6 +59,12 @@
 		0966ABB221A3D27400B7BDEF /* CrispVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrispVC.swift; sourceTree = "<group>"; };
 		0966ABB421A3F6F900B7BDEF /* ChangeUsernameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUsernameVC.swift; sourceTree = "<group>"; };
 		0966ABB821A401DE00B7BDEF /* OpenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenVC.swift; sourceTree = "<group>"; };
+		0966ABBC21A4CFBD00B7BDEF /* ComposeTextpostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTextpostVC.swift; sourceTree = "<group>"; };
+		0966ABBE21A4DEF100B7BDEF /* ComposePhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposePhotoVC.swift; sourceTree = "<group>"; };
+		0966ABC021A4DF1F00B7BDEF /* ComposeSongVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeSongVC.swift; sourceTree = "<group>"; };
+		0966ABC221A4DF2D00B7BDEF /* ComposeFoodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeFoodVC.swift; sourceTree = "<group>"; };
+		0966ABC421A4DF3A00B7BDEF /* ComposeTvVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTvVC.swift; sourceTree = "<group>"; };
+		0966ABC621A4DF4700B7BDEF /* ComposePollVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposePollVC.swift; sourceTree = "<group>"; };
 		0996BDD521A125F90088D50B /* party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = party.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0996BDD821A125F90088D50B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0996BDDA21A125F90088D50B /* LaunchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchVC.swift; sourceTree = "<group>"; };
@@ -129,6 +141,12 @@
 				0966ABB221A3D27400B7BDEF /* CrispVC.swift */,
 				0966ABB421A3F6F900B7BDEF /* ChangeUsernameVC.swift */,
 				0966ABB821A401DE00B7BDEF /* OpenVC.swift */,
+				0966ABBC21A4CFBD00B7BDEF /* ComposeTextpostVC.swift */,
+				0966ABBE21A4DEF100B7BDEF /* ComposePhotoVC.swift */,
+				0966ABC021A4DF1F00B7BDEF /* ComposeSongVC.swift */,
+				0966ABC221A4DF2D00B7BDEF /* ComposeFoodVC.swift */,
+				0966ABC421A4DF3A00B7BDEF /* ComposeTvVC.swift */,
+				0966ABC621A4DF4700B7BDEF /* ComposePollVC.swift */,
 			);
 			path = party;
 			sourceTree = "<group>";
@@ -338,14 +356,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0996BDDB21A125F90088D50B /* LaunchVC.swift in Sources */,
+				0966ABC321A4DF2D00B7BDEF /* ComposeFoodVC.swift in Sources */,
 				0966ABB921A401DE00B7BDEF /* OpenVC.swift in Sources */,
+				0966ABBF21A4DEF100B7BDEF /* ComposePhotoVC.swift in Sources */,
 				0996BDD921A125F90088D50B /* AppDelegate.swift in Sources */,
+				0966ABC121A4DF1F00B7BDEF /* ComposeSongVC.swift in Sources */,
 				09CE57DF21A1F8A2006B50EC /* SignupStep3VC.swift in Sources */,
 				09CE57D921A16F45006B50EC /* SignupStep1VC.swift in Sources */,
 				0966ABB521A3F6F900B7BDEF /* ChangeUsernameVC.swift in Sources */,
+				0966ABC721A4DF4700B7BDEF /* ComposePollVC.swift in Sources */,
+				0966ABBD21A4CFBD00B7BDEF /* ComposeTextpostVC.swift in Sources */,
 				0966ABB321A3D27400B7BDEF /* CrispVC.swift in Sources */,
 				09CE57DB21A17437006B50EC /* SignupStep2VC.swift in Sources */,
 				09A4651C21A38CAC001CE563 /* ForgotPasswordVC.swift in Sources */,
+				0966ABC521A4DF3A00B7BDEF /* ComposeTvVC.swift in Sources */,
 				09CE57E321A22CD6006B50EC /* MainVC.swift in Sources */,
 				09CE57E121A1F8B1006B50EC /* SignupStep4VC.swift in Sources */,
 				09CE57D521A13ABD006B50EC /* LoginVC.swift in Sources */,

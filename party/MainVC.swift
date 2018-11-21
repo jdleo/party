@@ -24,6 +24,15 @@ class MainVC: UIViewController, CircleMenuDelegate {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
     
+    let segueIdentifiers = [
+        "goToComposeTextpost",
+        "goToComposePhoto",
+        "goToComposeSong",
+        "goToComposeFood",
+        "goToComposeTv",
+        "goToComposePoll"
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,6 +98,7 @@ class MainVC: UIViewController, CircleMenuDelegate {
     }
     
     @IBAction func unwindToMain(segue:UIStoryboardSegue) { }
+    @IBAction func unwindToMain2(segue:UIStoryboardSegue) { }
     
     func downloadMyProfilePic() {
         if let uid = Auth.auth().currentUser?.uid {
@@ -207,7 +217,8 @@ class MainVC: UIViewController, CircleMenuDelegate {
             }
         } else if circleMenu.buttonsCount == 6 {
             //this is the post button
-            print(atIndex)
+            //handle appropriate segue
+            self.performSegue(withIdentifier: self.segueIdentifiers[atIndex], sender: nil)
         }
     }
     
