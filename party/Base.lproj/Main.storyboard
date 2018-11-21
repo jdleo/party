@@ -917,10 +917,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPG-8e-GLL">
-                                <rect key="frame" x="16" y="28" width="30" height="30"/>
+                                <rect key="frame" x="16" y="28" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="X8B-Y7-Qpi"/>
-                                    <constraint firstAttribute="width" constant="30" id="b4d-rl-P9g"/>
+                                    <constraint firstAttribute="height" constant="20" id="X8B-Y7-Qpi"/>
+                                    <constraint firstAttribute="width" constant="20" id="b4d-rl-P9g"/>
                                 </constraints>
                                 <state key="normal" image="back-white"/>
                                 <connections>
@@ -967,10 +967,26 @@
                                     <constraint firstItem="jGD-b4-6au" firstAttribute="leading" secondItem="hLq-5q-PmR" secondAttribute="leading" constant="60" id="s1J-Lz-EMr"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2D-i2-VHs">
+                                <rect key="frame" x="339" y="28" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="LxM-4I-l9j"/>
+                                    <constraint firstAttribute="height" constant="20" id="geH-10-Zne"/>
+                                </constraints>
+                                <state key="normal" image="upload"/>
+                                <connections>
+                                    <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="CDA-DV-MDc"/>
+                                    <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="SUl-kE-RPn"/>
+                                    <action selector="upload:" destination="iLv-2i-F3V" eventType="touchUpInside" id="aL4-Zi-Dni"/>
+                                    <action selector="upload:" destination="u6y-4i-8xI" eventType="touchUpInside" id="vBc-Rp-94m"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12941176470588234" green="0.58823529411764708" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="G2D-i2-VHs" firstAttribute="top" secondItem="WQM-1Q-oNt" secondAttribute="top" constant="8" id="1rP-e8-bIc"/>
                             <constraint firstAttribute="trailing" secondItem="hLq-5q-PmR" secondAttribute="trailing" id="FAH-MW-GiM"/>
+                            <constraint firstItem="WQM-1Q-oNt" firstAttribute="trailing" secondItem="G2D-i2-VHs" secondAttribute="trailing" constant="16" id="WQ8-3k-oIX"/>
                             <constraint firstItem="IPG-8e-GLL" firstAttribute="top" secondItem="WQM-1Q-oNt" secondAttribute="top" constant="8" id="Ycs-9q-P2I"/>
                             <constraint firstItem="IPG-8e-GLL" firstAttribute="leading" secondItem="WQM-1Q-oNt" secondAttribute="leading" constant="16" id="lH2-C9-h60"/>
                             <constraint firstItem="0W1-pv-k7Z" firstAttribute="top" secondItem="WQM-1Q-oNt" secondAttribute="top" constant="60" id="mB2-NQ-Lui"/>
@@ -1222,10 +1238,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hk-oa-VeT">
-                                <rect key="frame" x="16" y="28" width="30" height="30"/>
+                                <rect key="frame" x="16" y="28" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="AHg-VC-FYX"/>
-                                    <constraint firstAttribute="height" constant="30" id="Lqd-FH-Ork"/>
+                                    <constraint firstAttribute="height" constant="20" id="ncU-8X-qc2"/>
+                                    <constraint firstAttribute="width" constant="20" id="pci-DE-bwL"/>
                                 </constraints>
                                 <state key="normal" image="back-white"/>
                                 <connections>
@@ -1267,10 +1283,10 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGs-IZ-yZL">
-                                <rect key="frame" x="329" y="28" width="30" height="30"/>
+                                <rect key="frame" x="339" y="28" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ytM-iT-RUJ"/>
-                                    <constraint firstAttribute="width" constant="30" id="znf-im-nUq"/>
+                                    <constraint firstAttribute="height" constant="20" id="OyP-Zq-M5f"/>
+                                    <constraint firstAttribute="width" constant="20" id="sNR-Kb-v4H"/>
                                 </constraints>
                                 <state key="normal" image="upload"/>
                                 <connections>
