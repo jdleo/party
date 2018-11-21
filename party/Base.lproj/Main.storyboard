@@ -927,7 +927,6 @@
                                     <action selector="goBack:" destination="u6y-4i-8xI" eventType="touchUpInside" id="4C1-bq-bjC"/>
                                     <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="A9Y-qa-Lxs"/>
                                     <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="ImM-le-sBb"/>
-                                    <action selector="goBack:" destination="iLv-2i-F3V" eventType="touchUpInside" id="ce9-uZ-wAT"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New photo. 📷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0W1-pv-k7Z">
@@ -956,9 +955,11 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="hLq-5q-PmR" id="Fjc-ya-oGb"/>
+                        <segue destination="QtS-OJ-7gX" kind="unwind" unwindAction="unwindToMain2WithSegue:" id="SaA-cr-Pbw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24B-TL-LC2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="QtS-OJ-7gX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4137" y="-394"/>
         </scene>
@@ -978,7 +979,6 @@
                                 </constraints>
                                 <state key="normal" image="back-white"/>
                                 <connections>
-                                    <action selector="goBack:" destination="iLv-2i-F3V" eventType="touchUpInside" id="9xR-1q-mda"/>
                                     <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="Wre-XJ-ShV"/>
                                     <action selector="goBack:" destination="YKw-xC-R9h" eventType="touchUpInside" id="iKM-3n-THM"/>
                                     <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="ncD-gO-yFC"/>
@@ -1010,9 +1010,11 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="qim-8A-Lf8" id="ODX-vh-2lA"/>
+                        <segue destination="LuR-od-ODF" kind="unwind" unwindAction="unwindToMain2WithSegue:" id="LSL-tA-vsI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIL-G1-aBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="LuR-od-ODF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4914" y="-65"/>
         </scene>
@@ -1034,7 +1036,6 @@
                                 <connections>
                                     <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="Dhm-Xi-agW"/>
                                     <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="VLB-ok-BQ6"/>
-                                    <action selector="goBack:" destination="iLv-2i-F3V" eventType="touchUpInside" id="lk9-59-Mfk"/>
                                     <action selector="goBack:" destination="QLO-Fr-Hcr" eventType="touchUpInside" id="ql8-eI-vDx"/>
                                 </connections>
                             </button>
@@ -1064,9 +1065,11 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="B1H-Yx-evt" id="2uJ-j6-4vE"/>
+                        <segue destination="bg9-hP-Ezp" kind="unwind" unwindAction="unwindToMain2WithSegue:" id="UTN-uM-Rjg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uED-Pe-6Yu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bg9-hP-Ezp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3810" y="1303"/>
         </scene>
@@ -1089,7 +1092,6 @@
                                     <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="7Hr-SW-1Y9"/>
                                     <action selector="goBack:" destination="NWa-Cu-OJ8" eventType="touchUpInside" id="XaW-EG-YDS"/>
                                     <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="yB1-HE-2fe"/>
-                                    <action selector="goBack:" destination="iLv-2i-F3V" eventType="touchUpInside" id="yk5-R0-woe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New TV. 📺" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjR-E6-myw">
@@ -1118,9 +1120,11 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="KJ5-3l-h7S" id="3Jb-VK-D0f"/>
+                        <segue destination="ref-u1-kng" kind="unwind" unwindAction="unwindToMain2WithSegue:" id="Xsu-MI-9Qd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXF-NV-hdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ref-u1-kng" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4606" y="1133"/>
         </scene>
@@ -1140,7 +1144,6 @@
                                 </constraints>
                                 <state key="normal" image="back-white"/>
                                 <connections>
-                                    <action selector="goBack:" destination="iLv-2i-F3V" eventType="touchUpInside" id="40m-Ha-2sI"/>
                                     <action selector="goBack:" destination="sVh-eE-bIv" eventType="touchUpInside" id="7vX-07-oD6"/>
                                     <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="InC-Ug-CZl"/>
                                     <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="wGE-Jv-3Lg"/>
@@ -1172,9 +1175,11 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="XzO-Tn-toX" id="DyA-lC-GXP"/>
+                        <segue destination="WCz-Ka-8gc" kind="unwind" unwindAction="unwindToMain2WithSegue:" id="vaD-rG-gTI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Pp-2t-sn3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WCz-Ka-8gc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5362" y="647"/>
         </scene>
@@ -1194,7 +1199,7 @@
                                 </constraints>
                                 <state key="normal" image="back-white"/>
                                 <connections>
-                                    <action selector="goBack:" destination="iLv-2i-F3V" eventType="touchUpInside" id="VIW-JX-Zud"/>
+                                    <action selector="goBack:" destination="iLv-2i-F3V" eventType="touchUpInside" id="KXN-Nn-G1G"/>
                                     <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="y42-4v-24c"/>
                                     <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="ydt-Fd-dEu"/>
                                 </connections>
@@ -1231,6 +1236,19 @@
                                     <constraint firstItem="FXx-Ii-N0s" firstAttribute="top" secondItem="V90-Nb-63w" secondAttribute="top" constant="8" id="kf2-gV-8l8"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGs-IZ-yZL">
+                                <rect key="frame" x="329" y="28" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ytM-iT-RUJ"/>
+                                    <constraint firstAttribute="width" constant="30" id="znf-im-nUq"/>
+                                </constraints>
+                                <state key="normal" image="upload"/>
+                                <connections>
+                                    <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="hWj-WF-toY"/>
+                                    <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="yqS-xQ-9uc"/>
+                                    <action selector="upload:" destination="iLv-2i-F3V" eventType="touchUpInside" id="gcj-pG-MOC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.2627450980392157" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1240,8 +1258,10 @@
                             <constraint firstItem="8hk-oa-VeT" firstAttribute="top" secondItem="AAV-Nb-NB0" secondAttribute="top" constant="8" id="Mj9-St-jZ5"/>
                             <constraint firstItem="gGy-mQ-bo0" firstAttribute="top" secondItem="AAV-Nb-NB0" secondAttribute="top" constant="60" id="Xdd-gV-JHw"/>
                             <constraint firstItem="V90-Nb-63w" firstAttribute="leading" secondItem="AAV-Nb-NB0" secondAttribute="leading" id="Zd5-2R-nAx"/>
+                            <constraint firstItem="nGs-IZ-yZL" firstAttribute="top" secondItem="AAV-Nb-NB0" secondAttribute="top" constant="8" id="cAz-bb-YHo"/>
                             <constraint firstItem="gGy-mQ-bo0" firstAttribute="centerX" secondItem="xug-n5-MtE" secondAttribute="centerX" id="k9B-F2-Iwg"/>
                             <constraint firstItem="V90-Nb-63w" firstAttribute="top" secondItem="gGy-mQ-bo0" secondAttribute="bottom" constant="25" id="lYf-0q-Wzc"/>
+                            <constraint firstItem="AAV-Nb-NB0" firstAttribute="trailing" secondItem="nGs-IZ-yZL" secondAttribute="trailing" constant="16" id="pBv-Qo-9mb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AAV-Nb-NB0"/>
                     </view>
@@ -1458,6 +1478,7 @@
         <image name="menu" width="1024" height="1024"/>
         <image name="plus" width="1024" height="1024"/>
         <image name="right-arrow" width="204.80000305175781" height="204.80000305175781"/>
+        <image name="upload" width="204.80000305175781" height="204.80000305175781"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mRK-s9-8H8"/>

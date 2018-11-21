@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import SwiftMessages
 
 class ComposeTextpostVC: UIViewController, UITextViewDelegate {
     
@@ -40,6 +42,57 @@ class ComposeTextpostVC: UIViewController, UITextViewDelegate {
 
     @IBAction func goBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func upload(_ sender: Any) {
+        //just to make sure the placeholder doesn't get posted
+        if textView.textColor != UIColor.lightGray {
+            //first, check if textfield length is <= 400
+            if self.textView.text.count <= 400 {
+                //get user's uid
+                if let uid = Auth.auth().currentUser?.uid {
+                    //create firestore db reference
+                    let db = Firestore.firestore()
+                    
+                    //get new write batch
+                    let batch = db.batch()
+                    
+                    //create reference to this user
+                    let userRef = db.collection("users").document(uid)
+                    
+                    //update 'lastStatus' and 'status' fields in user document
+                    var status = textView.text.prefix(20)
+                    
+                    if textView.text.count > 20 {
+                        status = status + "..."
+                    }
+                    
+                    batch.setData(["status": "📝 " + status, "lastStatus": Timestamp.init()], forDocument: userRef, merge: true)
+                    
+                    batch.commit { (error) in
+                        if error != nil {
+                            //error, handle
+                            self.presentError(message: error?.localizedDescription ?? "Something went wrong.")
+                        } else {
+                            let view = MessageView.viewFromNib(layout: .centeredView)
+                            view.configureTheme(.success)
+                            view.configureDropShadow()
+                            view.button?.isHidden = true
+                            view.configureContent(title: "Success", body: "Your post was sent!", iconText:"🎉")
+                            view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+                            var config = SwiftMessages.Config()
+                            config.presentationStyle = .center
+                            config.duration = .seconds(seconds: 2)
+                            SwiftMessages.show(config: config, view: view)
+                            self.dismiss(animated: true, completion: nil)
+                        }
+                    }
+                }
+            } else {
+                //text to be posted is too long
+                self.presentError(message: "Post length can't be over 400.")
+            }
+        }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -88,6 +141,20 @@ class ComposeTextpostVC: UIViewController, UITextViewDelegate {
             constraintOutlet.constant = keyboardHeight
             textView.layoutIfNeeded()
         }
+    }
+    
+    //helper function to present error
+    func presentError(message: String) {
+        let view = MessageView.viewFromNib(layout: .centeredView)
+        view.configureTheme(.error)
+        view.configureDropShadow()
+        view.button?.isHidden = true
+        view.configureContent(title: "Oops", body: message, iconText:"🙃")
+        view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        var config = SwiftMessages.Config()
+        config.presentationStyle = .center
+        config.duration = .seconds(seconds: 2)
+        SwiftMessages.show(config: config, view: view)
     }
     
 }

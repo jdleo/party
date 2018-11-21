@@ -44,9 +44,6 @@ class MainVC: UIViewController, CircleMenuDelegate {
         profileImg.clipsToBounds = true
         //for debugging only:
         //profileImg.image = UIImage(named: "d\(Int.random(in: 1...36))")
-        
-        //download user data
-        self.downloadMyData()
 
         //style the top card
         topCard.layer.cornerRadius = 5.0
@@ -75,6 +72,9 @@ class MainVC: UIViewController, CircleMenuDelegate {
     override func viewDidAppear(_ animated: Bool) {
         //download user profile pic
         self.downloadMyProfilePic()
+        
+        //download user data
+        self.downloadMyData()
     }
     
     func downloadMyData() {

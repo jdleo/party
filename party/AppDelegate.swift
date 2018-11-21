@@ -22,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //necessary for firebase SDK
         FirebaseApp.configure()
         
+        let db = Firestore.firestore()
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+        
         //Crisp SDK
         Crisp.initialize(websiteId: "a0b115d5-b865-4327-b5a9-02b4e8276202")
         
