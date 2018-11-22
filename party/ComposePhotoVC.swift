@@ -16,6 +16,7 @@ class ComposePhotoVC: UIViewController {
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var selectPhotoBtn: UIButton!
     @IBOutlet weak var pendingPhoto: UIImageView!
+    @IBOutlet weak var progressView: UIProgressView!
     
     var didSelectPhoto = false
     
@@ -26,6 +27,12 @@ class ComposePhotoVC: UIViewController {
         
         //style select photo btn
         selectPhotoBtn.layer.cornerRadius = 10
+        
+        //style progress view
+        progressView.layer.cornerRadius = 8
+        progressView.clipsToBounds = true
+        progressView.layer.sublayers![1].cornerRadius = 8
+        progressView.subviews[1].clipsToBounds = true
         
         //style card view
         //cardView.layer.masksToBounds = true
@@ -97,7 +104,7 @@ class ComposePhotoVC: UIViewController {
             let imageData = image.jpegData(compressionQuality: 0.25)
             
             //attempt to upload image data to Firebase Storage
-            storage.putData(imageData!, metadata: nil) { (meta, error) in
+            let uploadTask = storage.putData(imageData!, metadata: nil) { (meta, error) in
                 if error != nil {
                     //error, handle
                     self.presentError(message: error?.localizedDescription ?? "Something went wrong.")
@@ -123,6 +130,14 @@ class ComposePhotoVC: UIViewController {
                         }
                     })
                 }
+            }
+            
+            uploadTask.observe(.progress) { snapshot in
+                // Upload reported progress
+                let percentComplete = 100.0 * Float(snapshot.progress!.completedUnitCount)
+                    / Float(snapshot.progress!.totalUnitCount)
+                
+                self.progressView.setProgress(percentComplete, animated: true)
             }
         }
     }

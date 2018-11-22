@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "040FD91C03F8EFA66D8D272B8005913A"
-               BlueprintName = "PryntTrimmerView"
+               BlueprintIdentifier = "58C585640DC016A99DEFCA5551BDED11"
+               BlueprintName = "SpotifyLogin"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "PryntTrimmerView.framework">
+               BuildableName = "SpotifyLogin.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -11,6 +11,7 @@ import CircleMenu
 import Firebase
 import SwiftMessages
 import Crisp
+import SpotifyLogin
 
 class MainVC: UIViewController, CircleMenuDelegate {
     
@@ -67,6 +68,8 @@ class MainVC: UIViewController, CircleMenuDelegate {
         menuBtn.customSelectedIconView?.frame.size = CGSize(width: 40, height: 40)
         menuBtn.customSelectedIconView?.contentMode = .scaleAspectFit
         
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -99,6 +102,16 @@ class MainVC: UIViewController, CircleMenuDelegate {
     
     @IBAction func unwindToMain(segue:UIStoryboardSegue) { }
     @IBAction func unwindToMain2(segue:UIStoryboardSegue) { }
+    
+    @objc func loginSuccessful() {
+        SpotifyLogin.shared.getAccessToken { (accessToken, error) in
+            if error != nil {
+                //error
+            } else {
+                print(accessToken)
+            }
+        }
+    }
     
     func downloadMyProfilePic() {
         if let uid = Auth.auth().currentUser?.uid {
@@ -218,7 +231,34 @@ class MainVC: UIViewController, CircleMenuDelegate {
         } else if circleMenu.buttonsCount == 6 {
             //this is the post button
             //handle appropriate segue
-            self.performSegue(withIdentifier: self.segueIdentifiers[atIndex], sender: nil)
+            //check if song compose
+            if atIndex == 2 {
+                //prep for spotify
+                SpotifyLogin.shared.getAccessToken { (accessToken, error) in
+                    if error != nil {
+                        // User is not logged in, show log in flow.
+                        let view = MessageView.viewFromNib(layout: .centeredView)
+                        view.configureTheme(.info)
+                        view.configureDropShadow()
+                        view.button?.isHidden = true
+                        view.configureContent(title: "Link to Spotify", body: "In order to share music, you need to link a Spotify account (doesn't need to be premium, and it's free) 😃\n\n\n\n", iconText:"🎵")
+                        view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+                        var config = SwiftMessages.Config()
+                        config.presentationStyle = .center
+                        config.duration = .forever
+                        let button = SpotifyLoginButton(viewController: self, scopes: [.streaming, .userLibraryRead])
+                        view.addSubview(button)
+                        button.translatesAutoresizingMaskIntoConstraints = false
+                        button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+                        button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+                        SwiftMessages.show(config: config, view: view)
+                    } else {
+                        print(accessToken)
+                    }
+                }
+            } else {
+                self.performSegue(withIdentifier: self.segueIdentifiers[atIndex], sender: nil)
+            }
         }
     }
     

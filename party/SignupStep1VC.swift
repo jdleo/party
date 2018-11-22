@@ -31,7 +31,7 @@ class SignupStep1VC: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         
         if textField.text != "", let name = textField.text {
-            if name.characters.count <= 25 {
+            if name.count <= 25 {
                 self.performSegue(withIdentifier: "goToSignup2", sender: nil)
             } else {
                 //text field too long

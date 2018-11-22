@@ -79,6 +79,7 @@ PODS:
   - Protobuf (3.5.0)
   - PryntTrimmerView (2.0.1)
   - SAConfettiView (0.1.8)
+  - SpotifyLogin (0.1.6)
   - SteviaLayout (4.2.0)
   - SwiftMessages (4.1.4):
     - SwiftMessages/App (= 4.1.4)
@@ -96,6 +97,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - SAConfettiView
+  - SpotifyLogin (~> 0.1)
   - SwiftMessages
   - YPImagePicker
   - YXWaveView
@@ -122,11 +124,12 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   PryntTrimmerView: 4260ae497a2f3e1bbfc0b71247eb74ab92bf0490
   SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
+  SpotifyLogin: 9cdf82ff13e5f37e5ddc7fd07cf9793a9ebd1124
   SteviaLayout: 0d2112caea45707695e8c718262c8ea3dd37ef17
   SwiftMessages: 2c33fdee8b8f38dfc7e1036684456b505891da8c
   YPImagePicker: 817ae068f084a6f132312e66255347d1ce82782d
   YXWaveView: 3570d7244b08effd077a5c63b0693aa44b7cd369
 
-PODFILE CHECKSUM: a0f1663dd0bac5287e525d220821cb92faa29cbe
+PODFILE CHECKSUM: 5164033f03ab75a1ec2d65be98d267cbbeb5e67d
 
 COCOAPODS: 1.4.0

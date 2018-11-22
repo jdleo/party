@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import Crisp
+import SpotifyLogin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //necessary for firebase SDK
         FirebaseApp.configure()
         
+        //necessary for spotify SDK
+        SpotifyLogin.shared.configure(clientID: Constants().spotifyClientId(), clientSecret: Constants().spotifyClientSecret(), redirectURL: URL(string: "party-spotify://")!)
+        
+        //firestore SDK
         let db = Firestore.firestore()
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
@@ -34,6 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //try! Auth.auth().signOut()
         
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        //necessary for spotify SDK
+        let handled = SpotifyLogin.shared.applicationOpenURL(url) { (error) in }
+        return handled
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

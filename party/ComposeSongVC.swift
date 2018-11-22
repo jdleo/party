@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpotifyLogin
 
 class ComposeSongVC: UIViewController {
 

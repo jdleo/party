@@ -6,6 +6,7 @@ target 'party' do
   use_frameworks!
 
   # Pods for party
+  pod 'SpotifyLogin', '~> 0.1'
   pod "SAConfettiView"
   pod 'YXWaveView'
   pod 'SwiftMessages'
