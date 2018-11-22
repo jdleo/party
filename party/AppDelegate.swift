@@ -26,6 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //necessary for spotify SDK
         SpotifyLogin.shared.configure(clientID: Constants().spotifyClientId(), clientSecret: Constants().spotifyClientSecret(), redirectURL: URL(string: "party-spotify://")!)
         
+        //for debugging only
+        //SpotifyLogin.shared.logout()
+        
         //firestore SDK
         let db = Firestore.firestore()
         let settings = db.settings

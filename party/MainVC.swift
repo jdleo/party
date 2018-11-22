@@ -103,12 +103,17 @@ class MainVC: UIViewController, CircleMenuDelegate {
     @IBAction func unwindToMain(segue:UIStoryboardSegue) { }
     @IBAction func unwindToMain2(segue:UIStoryboardSegue) { }
     
+    @objc func buttonClicked() {
+        SwiftMessages.hideAll()
+    }
+    
     @objc func loginSuccessful() {
         SpotifyLogin.shared.getAccessToken { (accessToken, error) in
             if error != nil {
                 //error
             } else {
-                print(accessToken)
+                //success, segue to ComposeSongVC
+                self.performSegue(withIdentifier: "goToComposeSong", sender: nil)
             }
         }
     }
@@ -251,9 +256,11 @@ class MainVC: UIViewController, CircleMenuDelegate {
                         button.translatesAutoresizingMaskIntoConstraints = false
                         button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
                         button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+                        button.addTarget(self, action:#selector(self.buttonClicked), for: .touchUpInside)
                         SwiftMessages.show(config: config, view: view)
                     } else {
-                        print(accessToken)
+                        //success, segue to song compose vc
+                        self.performSegue(withIdentifier: self.segueIdentifiers[atIndex], sender: nil)
                     }
                 }
             } else {
