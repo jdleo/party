@@ -8,12 +8,17 @@
 
 import UIKit
 import SpotifyLogin
+import Firebase
+import SwiftMessages
 
 class ComposeSongVC: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var songField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var uploadBtn: UIButton!
+    
+    var selectedIndex = -1
     
     var songResults: [[String: String]] = []
     
@@ -21,6 +26,9 @@ class ComposeSongVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //upload btn hidden by default
+        uploadBtn.isHidden = true
         
         //set text field delegate
         songField.delegate = self
@@ -44,6 +52,7 @@ class ComposeSongVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,
                 if error != nil {
                     
                 } else {
+                    self.selectedIndex = -1
                     let config = URLSessionConfiguration.default
                     let session = URLSession(configuration: config)
                     
@@ -126,7 +135,8 @@ class ComposeSongVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        uploadBtn.isHidden = false
+        self.selectedIndex = indexPath.row
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -168,4 +178,77 @@ class ComposeSongVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,
         return 80
     }
 
+    @IBAction func upload(_ sender: Any) {
+        //this tells us first that a cell HAS been selected
+        if selectedIndex != -1 {
+            if let uid = Auth.auth().currentUser?.uid {
+                //reference to selected song in memory
+                let selectedItem = songResults[selectedIndex]
+                
+                //reference to Firestore database
+                let db = Firestore.firestore()
+                
+                //reference to batch
+                let batch = db.batch()
+                
+                //create reference to this user
+                let userRef = db.collection("users").document(uid)
+                
+                //create reference to this user's posts
+                let postRef = db.collection("posts").document(uid).collection("posts").document()
+                
+                //get current time as Timestamp type
+                let timestamp = Timestamp.init()
+                
+                //set status string
+                let status = (selectedItem["artist"] ?? "") + " - " + (selectedItem["track"] ?? "")
+                
+                //update status data in user document
+                batch.setData(["status": "🎵 " + status, "lastStatus": timestamp], forDocument: userRef, merge: true)
+                
+                //update post data in user posts document
+                batch.setData([
+                    "type": "song",
+                    "artist": selectedItem["artist"] ?? "",
+                    "track": selectedItem["track"] ?? "",
+                    "image": selectedItem["image"] ?? "",
+                    "preview": selectedItem["preview"] ?? ""
+                    ], forDocument: postRef)
+                
+                //commit batch to database
+                batch.commit { (error) in
+                    if error != nil {
+                        //error, handle
+                        self.presentError(message: error?.localizedDescription ?? "Something went wrong.")
+                    } else {
+                        let view = MessageView.viewFromNib(layout: .centeredView)
+                        view.configureTheme(.success)
+                        view.configureDropShadow()
+                        view.button?.isHidden = true
+                        view.configureContent(title: "Success", body: "Your song post was sent!", iconText:"🎉")
+                        view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+                        var config = SwiftMessages.Config()
+                        config.presentationStyle = .center
+                        config.duration = .seconds(seconds: 2)
+                        SwiftMessages.show(config: config, view: view)
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+    }
+    
+    //helper function to present error
+    func presentError(message: String) {
+        let view = MessageView.viewFromNib(layout: .centeredView)
+        view.configureTheme(.error)
+        view.configureDropShadow()
+        view.button?.isHidden = true
+        view.configureContent(title: "Oops", body: message, iconText:"🙃")
+        view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        var config = SwiftMessages.Config()
+        config.presentationStyle = .center
+        config.duration = .seconds(seconds: 2)
+        SwiftMessages.show(config: config, view: view)
+    }
 }

@@ -17,6 +17,7 @@ class ComposePhotoVC: UIViewController {
     @IBOutlet weak var selectPhotoBtn: UIButton!
     @IBOutlet weak var pendingPhoto: UIImageView!
     @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var uploadBtn: UIButton!
     
     var didSelectPhoto = false
     
@@ -24,6 +25,9 @@ class ComposePhotoVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //at first upload btn is hidden
+        uploadBtn.isHidden = true
         
         //style select photo btn
         selectPhotoBtn.layer.cornerRadius = 10
@@ -60,6 +64,7 @@ class ComposePhotoVC: UIViewController {
                 case .photo(let photo):
                     self.pendingPhoto.image = photo.image
                     self.didSelectPhoto = true
+                    self.uploadBtn.isHidden = false
                 case .video(let video):
                     print(video)
                 }

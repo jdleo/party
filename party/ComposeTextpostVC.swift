@@ -63,13 +63,14 @@ class ComposeTextpostVC: UIViewController, UITextViewDelegate {
                     //create reference to this user's posts
                     let postRef = db.collection("posts").document(uid).collection("posts").document()
                     
-                    //update 'lastStatus' and 'status' fields in user document
+                    //slice status
                     var status = textView.text.prefix(20)
                     
                     if textView.text.count > 20 {
                         status = status + "..."
                     }
                     
+                    //get current time as Timestamp type
                     let timestamp = Timestamp.init()
                     
                     //update status data in user document

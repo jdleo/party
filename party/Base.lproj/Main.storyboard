@@ -682,13 +682,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwr-lm-H85">
-                                        <rect key="frame" x="86" y="15" width="0.0" height="0.0"/>
+                                        <rect key="frame" x="86" y="15" width="241" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiA-N0-Zo4">
-                                        <rect key="frame" x="86" y="23.5" width="0.0" height="0.0"/>
+                                        <rect key="frame" x="86" y="23.5" width="241" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -698,8 +698,10 @@
                                 <constraints>
                                     <constraint firstItem="2Ip-T9-pD2" firstAttribute="leading" secondItem="FWi-3h-3jp" secondAttribute="leading" constant="20" id="3Tc-jH-ZP9"/>
                                     <constraint firstItem="SiA-N0-Zo4" firstAttribute="leading" secondItem="2Ip-T9-pD2" secondAttribute="trailing" constant="16" id="5op-jM-lEi"/>
+                                    <constraint firstAttribute="trailing" secondItem="SiA-N0-Zo4" secondAttribute="trailing" constant="16" id="DMY-5R-dHq"/>
                                     <constraint firstItem="SiA-N0-Zo4" firstAttribute="top" secondItem="hwr-lm-H85" secondAttribute="bottom" constant="8.5" id="HeQ-MP-evG"/>
                                     <constraint firstItem="2Ip-T9-pD2" firstAttribute="centerY" secondItem="FWi-3h-3jp" secondAttribute="centerY" id="Njj-fD-ooG"/>
+                                    <constraint firstAttribute="trailing" secondItem="hwr-lm-H85" secondAttribute="trailing" constant="16" id="QAq-ig-02j"/>
                                     <constraint firstItem="hwr-lm-H85" firstAttribute="leading" secondItem="2Ip-T9-pD2" secondAttribute="trailing" constant="16" id="QPK-Rl-Mra"/>
                                     <constraint firstItem="hwr-lm-H85" firstAttribute="top" secondItem="FWi-3h-3jp" secondAttribute="top" constant="15" id="cjI-WU-KUw"/>
                                     <constraint firstAttribute="height" constant="80" id="pQG-an-OkX"/>
@@ -1012,6 +1014,7 @@
                         <outlet property="pendingPhoto" destination="jGD-b4-6au" id="Eh1-F8-x4x"/>
                         <outlet property="progressView" destination="RR0-I3-vCR" id="1Fy-Ct-OEw"/>
                         <outlet property="selectPhotoBtn" destination="gMj-fl-g7y" id="mgu-Oz-L1A"/>
+                        <outlet property="uploadBtn" destination="G2D-i2-VHs" id="Uja-38-MVc"/>
                         <segue destination="QtS-OJ-7gX" kind="unwind" unwindAction="unwindToMain2WithSegue:" id="SaA-cr-Pbw"/>
                     </connections>
                 </viewController>
@@ -1146,14 +1149,31 @@
                                     <constraint firstItem="6Wj-Ec-LVM" firstAttribute="top" secondItem="rhg-rU-Ab8" secondAttribute="bottom" constant="8" id="pbG-l0-rXt"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHH-rw-Ypy">
+                                <rect key="frame" x="339" y="28" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="5hZ-5o-rfy"/>
+                                    <constraint firstAttribute="height" constant="20" id="jpf-xE-Zz3"/>
+                                </constraints>
+                                <state key="normal" image="upload"/>
+                                <connections>
+                                    <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="H2w-36-c5V"/>
+                                    <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="fzZ-JX-Q6g"/>
+                                    <action selector="upload:" destination="u6y-4i-8xI" eventType="touchUpInside" id="BxV-et-fkR"/>
+                                    <action selector="upload:" destination="YKw-xC-R9h" eventType="touchUpInside" id="C2p-TG-54t"/>
+                                    <action selector="upload:" destination="iLv-2i-F3V" eventType="touchUpInside" id="dPa-ix-9Rl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921568627451" green="0.68627450980392157" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="y7v-eo-Rsn" firstAttribute="trailing" secondItem="nHH-rw-Ypy" secondAttribute="trailing" constant="16" id="2sr-OY-Bch"/>
                             <constraint firstItem="qim-8A-Lf8" firstAttribute="top" secondItem="k4f-e7-tSH" secondAttribute="bottom" constant="25" id="H7b-Ir-2Wt"/>
                             <constraint firstItem="y7v-eo-Rsn" firstAttribute="trailing" secondItem="qim-8A-Lf8" secondAttribute="trailing" id="Ndi-mL-zTN"/>
                             <constraint firstItem="k4f-e7-tSH" firstAttribute="centerX" secondItem="VmA-Ho-bpl" secondAttribute="centerX" id="V38-9e-dbp"/>
                             <constraint firstItem="7ql-ln-7Tf" firstAttribute="leading" secondItem="y7v-eo-Rsn" secondAttribute="leading" constant="16" id="aS5-Bg-DFg"/>
                             <constraint firstItem="k4f-e7-tSH" firstAttribute="top" secondItem="y7v-eo-Rsn" secondAttribute="top" constant="60" id="gz9-Ll-EX9"/>
+                            <constraint firstItem="nHH-rw-Ypy" firstAttribute="top" secondItem="y7v-eo-Rsn" secondAttribute="top" constant="8" id="hW6-KG-L3m"/>
                             <constraint firstAttribute="bottom" secondItem="qim-8A-Lf8" secondAttribute="bottom" id="hXj-LC-VzB"/>
                             <constraint firstItem="7ql-ln-7Tf" firstAttribute="top" secondItem="y7v-eo-Rsn" secondAttribute="top" constant="8" id="iQB-sM-G7Y"/>
                             <constraint firstItem="qim-8A-Lf8" firstAttribute="leading" secondItem="VmA-Ho-bpl" secondAttribute="leading" id="wLa-MM-URU"/>
@@ -1164,6 +1184,7 @@
                         <outlet property="cardView" destination="qim-8A-Lf8" id="ODX-vh-2lA"/>
                         <outlet property="songField" destination="rhg-rU-Ab8" id="ezC-m1-jyE"/>
                         <outlet property="tableView" destination="6Wj-Ec-LVM" id="aTa-yp-4ZM"/>
+                        <outlet property="uploadBtn" destination="nHH-rw-Ypy" id="eaR-qE-sFR"/>
                         <segue destination="LuR-od-ODF" kind="unwind" unwindAction="unwindToMain2WithSegue:" id="LSL-tA-vsI"/>
                     </connections>
                 </viewController>
