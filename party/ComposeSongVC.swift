@@ -17,6 +17,8 @@ class ComposeSongVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,
     
     var songResults: [[String: String]] = []
     
+    let imageCache = NSCache<NSString, UIImage>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,7 +48,7 @@ class ComposeSongVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,
                     let session = URLSession(configuration: config)
                     
                     let url = "https://api.spotify.com/v1/search"
-                    let parameters = ["q": song, "type" : "track", "market": "us"]
+                    let parameters = ["q": song, "type" : "track", "market": "us", "limit": "50"]
                     let headers = ["Authorization": "Bearer \(accessToken!)"]
                     
                     var urlComponents = URLComponents(string: url)
@@ -100,6 +102,7 @@ class ComposeSongVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,
                                     let images = album["images"] as! [[String: Any]]
                                     let image = images[0]["url"]
                                     
+                                
                                     self.songResults.append(["artist":artist as! String, "track":trackName as! String, "preview":preview as? String ?? "null", "image":image as! String])
                                 }
                             }
@@ -122,6 +125,10 @@ class ComposeSongVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,
         return true
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -132,15 +139,25 @@ class ComposeSongVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongPickCell", for: indexPath) as! SongPickCell
+        
+        cell.albumImg.image = nil
+        cell.tag = indexPath.row
         cell.artistLbl.text = self.songResults[indexPath.row]["artist"]
         cell.trackLbl.text = self.songResults[indexPath.row]["track"]
         
         let url = URL(string: self.songResults[indexPath.row]["image"]!)
         
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            DispatchQueue.main.async {
-                cell.albumImg.image = UIImage(data: data!)
+        if let cachedImage = imageCache.object(forKey: url?.absoluteString as! NSString) {
+            cell.albumImg.image = cachedImage
+        } else {
+            DispatchQueue.global().async {
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                DispatchQueue.main.async {
+                    if cell.tag == indexPath.row {
+                        cell.albumImg.image = UIImage(data: data!)
+                        self.imageCache.setObject(UIImage(data: data!)!, forKey: url?.absoluteString as! NSString)
+                    }
+                }
             }
         }
         
