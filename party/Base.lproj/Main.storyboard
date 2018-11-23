@@ -1222,7 +1222,85 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1H-Yx-evt">
                                 <rect key="frame" x="0.0" y="180" width="375" height="487"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ask a question..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="16k-ds-Xek">
+                                        <rect key="frame" x="16" y="20" width="343" height="25"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="U2O-9j-lwV">
+                                        <rect key="frame" x="16" y="69" width="343" height="144"/>
+                                        <subviews>
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choice 1" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AlN-Xi-SVN">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                            </textField>
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choice 2" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D1V-32-vAX">
+                                                <rect key="frame" x="0.0" y="41" width="343" height="21"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                            </textField>
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choice 3 (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B8g-pN-2gS">
+                                                <rect key="frame" x="0.0" y="82" width="343" height="21"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                            </textField>
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Choice 4 (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3r3-cn-0NA">
+                                                <rect key="frame" x="0.0" y="123" width="343" height="21"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="B8g-pN-2gS" secondAttribute="trailing" id="1ki-IB-zEe"/>
+                                            <constraint firstAttribute="trailing" secondItem="3r3-cn-0NA" secondAttribute="trailing" id="41u-jp-lgs"/>
+                                            <constraint firstAttribute="trailing" secondItem="D1V-32-vAX" secondAttribute="trailing" id="66Y-w7-hkp"/>
+                                            <constraint firstAttribute="trailing" secondItem="AlN-Xi-SVN" secondAttribute="trailing" id="AMt-VF-N5w"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAd-NE-BoM">
+                                        <rect key="frame" x="16" y="47" width="343" height="2"/>
+                                        <color key="backgroundColor" red="0.61225378513336182" green="0.15329408645629883" blue="0.69023215770721436" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="7ND-oG-rvJ"/>
+                                        </constraints>
+                                    </view>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="u0K-lz-0Ad">
+                                        <rect key="frame" x="16" y="253" width="343" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="x4f-Ke-cyF"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="12h"/>
+                                            <segment title="1d"/>
+                                            <segment title="2d"/>
+                                            <segment title="3d"/>
+                                            <segment title="1w"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.61225378509999995" green="0.15329408650000001" blue="0.69023215770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </segmentedControl>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="U2O-9j-lwV" firstAttribute="leading" secondItem="B1H-Yx-evt" secondAttribute="leading" constant="16" id="209-Zm-jfF"/>
+                                    <constraint firstItem="16k-ds-Xek" firstAttribute="leading" secondItem="B1H-Yx-evt" secondAttribute="leading" constant="16" id="Af1-3Q-9Nf"/>
+                                    <constraint firstAttribute="trailing" secondItem="u0K-lz-0Ad" secondAttribute="trailing" constant="16" id="PJ5-Md-0yb"/>
+                                    <constraint firstItem="EAd-NE-BoM" firstAttribute="top" secondItem="16k-ds-Xek" secondAttribute="bottom" constant="2" id="Vob-hC-N1A"/>
+                                    <constraint firstAttribute="trailing" secondItem="16k-ds-Xek" secondAttribute="trailing" constant="16" id="WaL-ah-k2c"/>
+                                    <constraint firstItem="16k-ds-Xek" firstAttribute="top" secondItem="B1H-Yx-evt" secondAttribute="top" constant="20" id="ZUc-KR-57w"/>
+                                    <constraint firstItem="U2O-9j-lwV" firstAttribute="top" secondItem="EAd-NE-BoM" secondAttribute="bottom" constant="20" id="anL-9K-F9v"/>
+                                    <constraint firstItem="u0K-lz-0Ad" firstAttribute="top" secondItem="U2O-9j-lwV" secondAttribute="bottom" constant="40" id="myM-eV-T5b"/>
+                                    <constraint firstAttribute="trailing" secondItem="EAd-NE-BoM" secondAttribute="trailing" constant="16" id="n79-T4-aQx"/>
+                                    <constraint firstItem="EAd-NE-BoM" firstAttribute="leading" secondItem="B1H-Yx-evt" secondAttribute="leading" constant="16" id="ne2-yR-wNa"/>
+                                    <constraint firstAttribute="trailing" secondItem="U2O-9j-lwV" secondAttribute="trailing" constant="16" id="yNf-om-3Jv"/>
+                                    <constraint firstItem="u0K-lz-0Ad" firstAttribute="leading" secondItem="B1H-Yx-evt" secondAttribute="leading" constant="16" id="zn7-PK-Cq6"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.61176470588235299" green="0.15294117647058825" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1240,13 +1318,19 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="B1H-Yx-evt" id="2uJ-j6-4vE"/>
+                        <outlet property="choice1textField" destination="AlN-Xi-SVN" id="mvh-O4-w18"/>
+                        <outlet property="choice2textField" destination="D1V-32-vAX" id="zJz-OL-EjC"/>
+                        <outlet property="choice3textField" destination="B8g-pN-2gS" id="CgE-WA-h8I"/>
+                        <outlet property="choice4textField" destination="3r3-cn-0NA" id="WZa-eY-U8j"/>
+                        <outlet property="lengthSegment" destination="u0K-lz-0Ad" id="Of2-w7-yw8"/>
+                        <outlet property="titleTextField" destination="16k-ds-Xek" id="GHL-ND-97T"/>
                         <segue destination="bg9-hP-Ezp" kind="unwind" unwindAction="unwindToMain2WithSegue:" id="UTN-uM-Rjg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uED-Pe-6Yu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bg9-hP-Ezp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3810" y="1303"/>
+            <point key="canvasLocation" x="3808.8000000000002" y="1302.9985007496252"/>
         </scene>
         <!--Compose TvVC-->
         <scene sceneID="9bT-B3-9Kf">
