@@ -1302,6 +1302,22 @@
                                     <constraint firstItem="u0K-lz-0Ad" firstAttribute="leading" secondItem="B1H-Yx-evt" secondAttribute="leading" constant="16" id="zn7-PK-Cq6"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAe-R8-Euk">
+                                <rect key="frame" x="339" y="28" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Fs7-af-WC1"/>
+                                    <constraint firstAttribute="height" constant="20" id="iEY-ZH-Ka6"/>
+                                </constraints>
+                                <state key="normal" image="upload"/>
+                                <connections>
+                                    <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="QXv-rM-zlC"/>
+                                    <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="swI-H2-m8W"/>
+                                    <action selector="upload:" destination="QLO-Fr-Hcr" eventType="touchUpInside" id="3Ma-Xw-iBG"/>
+                                    <action selector="upload:" destination="u6y-4i-8xI" eventType="touchUpInside" id="AX0-C1-v0j"/>
+                                    <action selector="upload:" destination="iLv-2i-F3V" eventType="touchUpInside" id="Z5h-yB-nXW"/>
+                                    <action selector="upload:" destination="YKw-xC-R9h" eventType="touchUpInside" id="pWn-9k-2wC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.61176470588235299" green="0.15294117647058825" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -1312,6 +1328,8 @@
                             <constraint firstItem="wNL-Ei-LEd" firstAttribute="leading" secondItem="HGZ-op-bfi" secondAttribute="leading" constant="16" id="MGm-cE-VbT"/>
                             <constraint firstItem="HGZ-op-bfi" firstAttribute="trailing" secondItem="B1H-Yx-evt" secondAttribute="trailing" id="gDz-ta-VY0"/>
                             <constraint firstAttribute="bottom" secondItem="B1H-Yx-evt" secondAttribute="bottom" id="hHZ-en-v3q"/>
+                            <constraint firstItem="gAe-R8-Euk" firstAttribute="top" secondItem="HGZ-op-bfi" secondAttribute="top" constant="8" id="uAJ-B9-4gP"/>
+                            <constraint firstItem="HGZ-op-bfi" firstAttribute="trailing" secondItem="gAe-R8-Euk" secondAttribute="trailing" constant="16" id="xeP-98-v6F"/>
                             <constraint firstItem="B1H-Yx-evt" firstAttribute="leading" secondItem="zRd-D3-SZb" secondAttribute="leading" id="yt8-s1-GrT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HGZ-op-bfi"/>
@@ -1324,6 +1342,7 @@
                         <outlet property="choice4textField" destination="3r3-cn-0NA" id="WZa-eY-U8j"/>
                         <outlet property="lengthSegment" destination="u0K-lz-0Ad" id="Of2-w7-yw8"/>
                         <outlet property="titleTextField" destination="16k-ds-Xek" id="GHL-ND-97T"/>
+                        <outlet property="uploadBtn" destination="gAe-R8-Euk" id="bUn-pw-Clg"/>
                         <segue destination="bg9-hP-Ezp" kind="unwind" unwindAction="unwindToMain2WithSegue:" id="UTN-uM-Rjg"/>
                     </connections>
                 </viewController>
