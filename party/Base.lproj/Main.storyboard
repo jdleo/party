@@ -1032,10 +1032,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ql-ln-7Tf">
-                                <rect key="frame" x="16" y="28" width="30" height="30"/>
+                                <rect key="frame" x="16" y="28" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ntt-OO-JVv"/>
-                                    <constraint firstAttribute="width" constant="30" id="n5L-IF-p7Q"/>
+                                    <constraint firstAttribute="height" constant="20" id="Ntt-OO-JVv"/>
+                                    <constraint firstAttribute="width" constant="20" id="n5L-IF-p7Q"/>
                                 </constraints>
                                 <state key="normal" image="back-white"/>
                                 <connections>
@@ -1202,10 +1202,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNL-Ei-LEd">
-                                <rect key="frame" x="16" y="28" width="30" height="30"/>
+                                <rect key="frame" x="16" y="28" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="P9y-Xh-oeg"/>
-                                    <constraint firstAttribute="height" constant="30" id="ocf-1F-zcQ"/>
+                                    <constraint firstAttribute="width" constant="20" id="P9y-Xh-oeg"/>
+                                    <constraint firstAttribute="height" constant="20" id="ocf-1F-zcQ"/>
                                 </constraints>
                                 <state key="normal" image="back-white"/>
                                 <connections>
@@ -1215,13 +1215,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New poll. ☑️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCb-Wi-Ycd">
-                                <rect key="frame" x="95.5" y="118" width="184.5" height="37"/>
+                                <rect key="frame" x="95.5" y="108" width="184.5" height="37"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B1H-Yx-evt">
-                                <rect key="frame" x="0.0" y="180" width="375" height="487"/>
+                                <rect key="frame" x="0.0" y="170" width="375" height="497"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ask a question..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="16k-ds-Xek">
                                         <rect key="frame" x="16" y="20" width="343" height="25"/>
@@ -1380,7 +1380,27 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KJ5-3l-h7S">
                                 <rect key="frame" x="0.0" y="142" width="375" height="525"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cza-2g-24M">
+                                        <rect key="frame" x="79.5" y="40" width="216" height="37"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="30"/>
+                                        <color key="textColor" red="1" green="0.3411764706" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This feature hasn't shipped yet. Here, you will be able to make movie/TV posts and share with your followers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3e-f6-54P">
+                                        <rect key="frame" x="16" y="97" width="343" height="152.5"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="25"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="x3e-f6-54P" secondAttribute="trailing" constant="16" id="FP5-n5-UzM"/>
+                                    <constraint firstItem="cza-2g-24M" firstAttribute="centerX" secondItem="KJ5-3l-h7S" secondAttribute="centerX" id="L9E-1o-5De"/>
+                                    <constraint firstItem="x3e-f6-54P" firstAttribute="leading" secondItem="KJ5-3l-h7S" secondAttribute="leading" constant="16" id="UxE-Jm-yFq"/>
+                                    <constraint firstItem="cza-2g-24M" firstAttribute="top" secondItem="KJ5-3l-h7S" secondAttribute="top" constant="40" id="nhy-dd-T18"/>
+                                    <constraint firstItem="x3e-f6-54P" firstAttribute="top" secondItem="cza-2g-24M" secondAttribute="bottom" constant="20" id="rFf-ee-Hxg"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.3411764705882353" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1415,10 +1435,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2M-VW-ZGq">
-                                <rect key="frame" x="16" y="28" width="30" height="30"/>
+                                <rect key="frame" x="16" y="28" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="5yI-4v-T1J"/>
-                                    <constraint firstAttribute="height" constant="30" id="oXj-QY-oIc"/>
+                                    <constraint firstAttribute="width" constant="20" id="5yI-4v-T1J"/>
+                                    <constraint firstAttribute="height" constant="20" id="oXj-QY-oIc"/>
                                 </constraints>
                                 <state key="normal" image="back-white"/>
                                 <connections>
@@ -1538,10 +1558,28 @@
                                     <constraint firstItem="hHa-Ni-T1h" firstAttribute="top" secondItem="f1q-I2-n59" secondAttribute="bottom" constant="20" id="uvG-Um-POs"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzG-1r-K1n">
+                                <rect key="frame" x="339" y="28" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3aL-Wm-J00"/>
+                                    <constraint firstAttribute="width" constant="20" id="Uzc-8e-AbC"/>
+                                </constraints>
+                                <state key="normal" image="upload"/>
+                                <connections>
+                                    <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="dAL-ry-3K0"/>
+                                    <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="lvj-r8-d7O"/>
+                                    <action selector="upload:" destination="sVh-eE-bIv" eventType="touchUpInside" id="3CR-34-l5z"/>
+                                    <action selector="upload:" destination="YKw-xC-R9h" eventType="touchUpInside" id="HLl-x3-mCl"/>
+                                    <action selector="upload:" destination="u6y-4i-8xI" eventType="touchUpInside" id="cKi-m9-xWA"/>
+                                    <action selector="upload:" destination="iLv-2i-F3V" eventType="touchUpInside" id="y7P-AW-Rwf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.92156862745098034" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="XzO-Tn-toX" firstAttribute="leading" secondItem="kk1-XR-9fz" secondAttribute="leading" id="1PZ-GC-NH2"/>
+                            <constraint firstItem="vzG-1r-K1n" firstAttribute="top" secondItem="pna-6P-sCa" secondAttribute="top" constant="8" id="2Sk-xk-rv7"/>
+                            <constraint firstItem="pna-6P-sCa" firstAttribute="trailing" secondItem="vzG-1r-K1n" secondAttribute="trailing" constant="16" id="9s2-D4-YXu"/>
                             <constraint firstItem="Fag-Os-N1I" firstAttribute="centerX" secondItem="kk1-XR-9fz" secondAttribute="centerX" id="aXY-mB-Xc7"/>
                             <constraint firstItem="Fag-Os-N1I" firstAttribute="top" secondItem="pna-6P-sCa" secondAttribute="top" constant="60" id="pAZ-rj-xg6"/>
                             <constraint firstItem="s2M-VW-ZGq" firstAttribute="top" secondItem="pna-6P-sCa" secondAttribute="top" constant="8" id="qcu-WJ-XQt"/>
@@ -1556,6 +1594,7 @@
                         <outlet property="cardView" destination="XzO-Tn-toX" id="DyA-lC-GXP"/>
                         <outlet property="foodTextField" destination="f1q-I2-n59" id="3UN-tF-t66"/>
                         <outlet property="tableView" destination="hHa-Ni-T1h" id="7N4-Fv-YQQ"/>
+                        <outlet property="uploadBtn" destination="vzG-1r-K1n" id="mVv-od-MSe"/>
                         <segue destination="WCz-Ka-8gc" kind="unwind" unwindAction="unwindToMain2WithSegue:" id="vaD-rG-gTI"/>
                     </connections>
                 </viewController>
