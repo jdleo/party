@@ -25,6 +25,8 @@ class MainVC: UIViewController, CircleMenuDelegate {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
     
+    let defaults = UserDefaults.standard
+    
     let segueIdentifiers = [
         "goToComposeTextpost",
         "goToComposePhoto",
@@ -68,6 +70,10 @@ class MainVC: UIViewController, CircleMenuDelegate {
         menuBtn.customSelectedIconView?.frame.size = CGSize(width: 40, height: 40)
         menuBtn.customSelectedIconView?.contentMode = .scaleAspectFit
         
+        //set up tap gesture for user panel on top
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileTap))
+        self.topCard.addGestureRecognizer(tap)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(loginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
         
     }
@@ -100,8 +106,23 @@ class MainVC: UIViewController, CircleMenuDelegate {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToUser" {
+            if let uid = Auth.auth().currentUser?.uid {
+                let destination = segue.destination as! UserVC
+                destination.userId = uid
+                destination.userImg = profileImg.image ?? UIImage(named: "d1")
+            }
+        }
+    }
+    
     @IBAction func unwindToMain(segue:UIStoryboardSegue) { }
     @IBAction func unwindToMain2(segue:UIStoryboardSegue) { }
+    @IBAction func unwindToMain3(segue:UIStoryboardSegue) { }
+    
+    @objc func handleProfileTap() {
+        self.performSegue(withIdentifier: "goToUser", sender: nil)
+    }
     
     @objc func buttonClicked() {
         SwiftMessages.hideAll()
@@ -129,6 +150,7 @@ class MainVC: UIViewController, CircleMenuDelegate {
                     print(error.localizedDescription)
                 } else {
                     // Data for "images/island.jpg" is returned
+                    self.defaults.set(data, forKey: uid)
                     let image = UIImage(data: data!)
                     self.profileImg.image = image
                 }

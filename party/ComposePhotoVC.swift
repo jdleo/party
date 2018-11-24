@@ -131,6 +131,7 @@ class ComposePhotoVC: UIViewController {
                             config.presentationStyle = .center
                             config.duration = .seconds(seconds: 2)
                             SwiftMessages.show(config: config, view: view)
+                            Constants().updatePostCount(uid: uid, value: 1)
                             self.dismiss(animated: true, completion: nil)
                         }
                     })
