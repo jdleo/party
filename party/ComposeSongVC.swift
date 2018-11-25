@@ -212,7 +212,8 @@ class ComposeSongVC: UIViewController, UITextFieldDelegate, UITableViewDelegate,
                     "artist": selectedItem["artist"] ?? "",
                     "track": selectedItem["track"] ?? "",
                     "image": selectedItem["image"] ?? "",
-                    "preview": selectedItem["preview"] ?? ""
+                    "preview": selectedItem["preview"] ?? "",
+                    "created_at": timestamp
                     ], forDocument: postRef)
                 
                 //commit batch to database

@@ -1045,8 +1045,8 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6PN-bM-fb9">
-                                                <rect key="frame" x="16" y="225" width="343" height="575"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6PN-bM-fb9">
+                                                <rect key="frame" x="0.0" y="225" width="375" height="575"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableView>
                                         </subviews>
@@ -1059,12 +1059,12 @@
                                             <constraint firstItem="6PN-bM-fb9" firstAttribute="top" secondItem="R3Q-lB-Hzb" secondAttribute="bottom" constant="20" id="Bf7-zE-3AR"/>
                                             <constraint firstItem="R3Q-lB-Hzb" firstAttribute="centerX" secondItem="YAY-CV-cre" secondAttribute="centerX" id="CBF-iP-eBy"/>
                                             <constraint firstItem="Z8G-0X-aC0" firstAttribute="top" secondItem="5Vd-IB-V6Z" secondAttribute="bottom" constant="30" id="ERM-Et-ntn"/>
+                                            <constraint firstItem="6PN-bM-fb9" firstAttribute="leading" secondItem="YAY-CV-cre" secondAttribute="leading" id="JkW-Ca-ckK"/>
                                             <constraint firstAttribute="height" constant="800" id="MPL-Em-AXL"/>
                                             <constraint firstItem="R3Q-lB-Hzb" firstAttribute="top" secondItem="LqG-My-3BX" secondAttribute="bottom" constant="30" id="Rgp-FE-zZy"/>
                                             <constraint firstItem="Z8G-0X-aC0" firstAttribute="leading" secondItem="LqG-My-3BX" secondAttribute="trailing" constant="33" id="Wod-6H-JQr"/>
-                                            <constraint firstItem="6PN-bM-fb9" firstAttribute="leading" secondItem="YAY-CV-cre" secondAttribute="leading" constant="16" id="bqJ-of-M7T"/>
                                             <constraint firstAttribute="trailing" secondItem="R3Q-lB-Hzb" secondAttribute="trailing" constant="16" id="lyD-I6-ATW"/>
-                                            <constraint firstAttribute="trailing" secondItem="6PN-bM-fb9" secondAttribute="trailing" constant="16" id="pow-1h-Gb5"/>
+                                            <constraint firstAttribute="trailing" secondItem="6PN-bM-fb9" secondAttribute="trailing" id="oyv-34-0GE"/>
                                             <constraint firstItem="5Vd-IB-V6Z" firstAttribute="top" secondItem="YAY-CV-cre" secondAttribute="topMargin" id="t8j-d9-bGU"/>
                                             <constraint firstItem="5Vd-IB-V6Z" firstAttribute="centerX" secondItem="YAY-CV-cre" secondAttribute="centerX" id="vmX-HB-Ohd"/>
                                             <constraint firstItem="LqG-My-3BX" firstAttribute="top" secondItem="5Vd-IB-V6Z" secondAttribute="bottom" constant="30" id="wJp-UY-WLx"/>
@@ -1108,7 +1108,9 @@
                         <outlet property="nameLbl" destination="rJc-y2-ADP" id="7sa-zP-KF4"/>
                         <outlet property="originalImg" destination="cPI-Np-1Zw" id="b8y-Ah-6W8"/>
                         <outlet property="postsLbl" destination="e2j-tV-jCT" id="7le-rY-Dzl"/>
+                        <outlet property="scrollView" destination="sr9-hE-Hgv" id="AVu-Di-0V5"/>
                         <outlet property="spotifyImg" destination="fcO-rw-rbH" id="sAk-n0-G8E"/>
+                        <outlet property="tableView" destination="6PN-bM-fb9" id="JhM-we-l4P"/>
                         <outlet property="usernameLbl" destination="PEd-xr-wwV" id="I3h-HY-ZZP"/>
                         <outlet property="verifiedImg" destination="xCb-zS-6Cg" id="MvK-Au-Jp9"/>
                         <segue destination="Df4-VB-en4" kind="unwind" unwindAction="unwindToMain3WithSegue:" id="6zp-Ho-6W3"/>

@@ -9,17 +9,154 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="KGk-i7-Jjw" customClass="TextPostCell" customModule="party" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="200" id="KGk-i7-Jjw" customClass="TextPostCell" customModule="party" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="343" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="343" height="199.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWe-wE-Ihy">
+                        <rect key="frame" x="16" y="8" width="319" height="121"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="121" id="rqK-gR-6gE"/>
+                        </constraints>
+                        <string key="text">fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras fermentum odio  iaculis at erat pellentesque adipiscing </string>
+                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="11"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v9P-KH-WA3">
+                        <rect key="frame" x="16" y="164" width="311" height="25"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isw-8z-CPV">
+                                <rect key="frame" x="0.0" y="0.0" width="48" height="25"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="BKJ-cI-aV9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                <state key="normal" title="😍 0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="react1:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Rmq-7b-i4i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rC3-xV-hX6">
+                                <rect key="frame" x="52.5" y="0.0" width="48" height="25"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="DpW-hA-bae"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                <state key="normal" title="😎 0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="react2:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nel-gO-7ar"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1J-dN-7tb">
+                                <rect key="frame" x="105" y="0.0" width="48" height="25"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="ZLF-mU-dId"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                <state key="normal" title="😡 0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="react3:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ZSv-bU-PWB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JF-yf-qxg">
+                                <rect key="frame" x="158" y="0.0" width="48" height="25"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="ZYI-td-Gba"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                <state key="normal" title="😔 0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="react4:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="0oi-FS-H7q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2C4-1L-7d9">
+                                <rect key="frame" x="210.5" y="0.0" width="48" height="25"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="L2w-wa-NhG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                <state key="normal" title="😂 0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="react5:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="UJb-wg-EGo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsq-4I-b0Y">
+                                <rect key="frame" x="263" y="0.0" width="48" height="25"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="Qs8-mg-9uW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
+                                <state key="normal" title="😉 0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="react6:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NkR-3f-iLC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMz-QH-ABN">
+                        <rect key="frame" x="16" y="137" width="67.5" height="15"/>
+                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.98431372549999996" green="0.97647058819999999" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstItem="sWe-wE-Ihy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="0CQ-y7-6Ti"/>
+                    <constraint firstItem="v9P-KH-WA3" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="4n7-NK-Ccf"/>
+                    <constraint firstItem="sWe-wE-Ihy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="84Q-PL-JhI"/>
+                    <constraint firstAttribute="trailing" secondItem="sWe-wE-Ihy" secondAttribute="trailing" constant="8" id="8Fn-KP-3Mh"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="v9P-KH-WA3" secondAttribute="trailing" id="OTW-1c-H6v"/>
+                    <constraint firstItem="v9P-KH-WA3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Pff-eq-PaM"/>
+                    <constraint firstItem="v9P-KH-WA3" firstAttribute="top" secondItem="MMz-QH-ABN" secondAttribute="bottom" constant="12" id="WLE-Vw-z8w"/>
+                    <constraint firstItem="MMz-QH-ABN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="cjE-fI-WWN"/>
+                    <constraint firstAttribute="bottom" secondItem="v9P-KH-WA3" secondAttribute="bottom" constant="10.5" id="sQD-xK-DnX"/>
+                    <constraint firstItem="MMz-QH-ABN" firstAttribute="top" secondItem="sWe-wE-Ihy" secondAttribute="bottom" constant="8" id="vJG-AM-FSZ"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bodyLbl" destination="sWe-wE-Ihy" id="pIB-7e-l4b"/>
+                <outlet property="dateLabel" destination="MMz-QH-ABN" id="lq6-k9-YhM"/>
+                <outlet property="reactionBtn1" destination="Isw-8z-CPV" id="J94-rr-yU4"/>
+                <outlet property="reactionBtn2" destination="rC3-xV-hX6" id="XLl-Jr-yBc"/>
+                <outlet property="reactionBtn3" destination="B1J-dN-7tb" id="nt8-52-55T"/>
+                <outlet property="reactionBtn4" destination="7JF-yf-qxg" id="3Zs-hu-6nt"/>
+                <outlet property="reactionBtn5" destination="2C4-1L-7d9" id="sEt-2F-7bL"/>
+                <outlet property="reactionBtn6" destination="Wsq-4I-b0Y" id="ScH-Qd-PIk"/>
+            </connections>
             <point key="canvasLocation" x="156" y="218.59070464767618"/>
         </tableViewCell>
     </objects>

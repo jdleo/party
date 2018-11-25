@@ -261,7 +261,8 @@ class ComposeFoodVC: UIViewController, UITextFieldDelegate, CLLocationManagerDel
                     "name": selectedItem["name"] ?? "",
                     "image_url": selectedItem["image_url"] ?? "",
                     "review_count": selectedItem["review_count"] ?? "",
-                    "rating": selectedItem["rating"] ?? ""
+                    "rating": selectedItem["rating"] ?? "",
+                    "created_at": timestamp
                     ], forDocument: postRef)
                 
                 //commit batch to database

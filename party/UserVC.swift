@@ -11,7 +11,7 @@ import YXWaveView
 import SwiftMessages
 import Firebase
 
-class UserVC: UIViewController {
+class UserVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, PostCellDelegate {
     
     @IBOutlet weak var followBtn: UIButton!
     @IBOutlet weak var nameLbl: UILabel!
@@ -24,13 +24,38 @@ class UserVC: UIViewController {
     @IBOutlet weak var originalImg: UIImageView!
     @IBOutlet weak var spotifyImg: UIImageView!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var tableView: UITableView!
+    
     let defaults = UserDefaults.standard
+    
+    var posts: [[String: Any]] = []
+    
+    let imageCache = NSCache<NSString, UIImage>()
     
     var userId: String = ""
     var userImg: UIImage!
+    
+    //let screenHeight = UIScreen.main.bounds.height
+    //let scrollViewContentHeight = 800 as CGFloat
+    //let scrollViewContentWidth = UIScreen.main.bounds.width
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.bounces = false
+        
+        //link up tableview
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        //register custom nibs
+        tableView.register(UINib(nibName: "TextPostCell", bundle: nil), forCellReuseIdentifier: "TextPostCell")
+        tableView.register(UINib(nibName: "SongPostCell", bundle: nil), forCellReuseIdentifier: "SongPostCell")
+        tableView.register(UINib(nibName: "PhotoPostCell", bundle: nil), forCellReuseIdentifier: "PhotoPostCell")
+        tableView.register(UINib(nibName: "PollPostCell", bundle: nil), forCellReuseIdentifier: "PollPostCell")
+        tableView.register(UINib(nibName: "FoodPostCell", bundle: nil), forCellReuseIdentifier: "FoodPostCell")
+        tableView.register(UINib(nibName: "TVPostCell", bundle: nil), forCellReuseIdentifier: "TVPostCell")
         
         //badges hidden by default
         verifiedImg.isHidden = true
@@ -70,11 +95,115 @@ class UserVC: UIViewController {
         //start wave view
         waterView.start()
         
+        //download User's posts
+        let db = Firestore.firestore()
+        db.collection("posts").document(self.userId).collection("posts").order(by: "created_at", descending: true).limit(to: 50).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    //format and append data to posts array
+                    var data = document.data()
+                    data["id"] = document.documentID
+                    self.posts.append(data)
+                }
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let post = posts[indexPath.row]
+        let type = post["type"] as! String
+        
+        if type == "textpost" {
+            return 200
+        } else if type == "photo" {
+            return 400
+        }
+        
+        return 100
     }
     
     override func viewDidAppear(_ animated: Bool) {
         //download user data
         self.downloadUserData()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.posts.count
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //reference to current post in table view
+        let post = posts[indexPath.row]
+        let postType = post["type"] as! String
+        
+        if postType == "textpost" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TextPostCell", for: indexPath) as! TextPostCell
+            cell.delegate = self
+            cell.postId = post["id"] as! String
+            cell.bodyLbl.text = post["body"] as! String
+            
+            let timestamp = post["created_at"] as! Timestamp
+            //MMM d, h:mm a
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d, h:mm a"
+            dateFormatter.timeZone = TimeZone.current
+            cell.dateLabel.text = "\(dateFormatter.string(from: timestamp.dateValue()))"
+            
+            return cell
+        } else if postType == "song" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SongPostCell", for: indexPath) as! SongPostCell
+            return cell
+        } else if postType == "photo" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoPostCell", for: indexPath) as! PhotoPostCell
+            cell.delegate = self
+            let timestamp = post["created_at"] as! Timestamp
+            let photoId = post["photoId"] as! String
+            cell.postImg.image = nil
+            cell.tag = indexPath.row
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d, h:mm a"
+            dateFormatter.timeZone = TimeZone.current
+            cell.dateLbl.text = "\(dateFormatter.string(from: timestamp.dateValue()))"
+            
+            let storage = Storage.storage().reference()
+            // Create a reference to the file you want to download
+            let picRef = storage.child("photos/\(self.userId)/\(photoId)")
+            
+            if let cachedImage = imageCache.object(forKey: photoId as NSString) {
+                cell.postImg.image = cachedImage
+            } else {
+                // Download in memory with a maximum allowed size of 5MB (5 * 1024 * 1024 bytes)
+                picRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+                    if let error = error {
+                        // Uh-oh, an error occurred!
+                    } else {
+                        // Data for "images/island.jpg" is returned
+                        if cell.tag == indexPath.row {
+                            cell.postImg.image = UIImage(data: data!)
+                            self.imageCache.setObject(UIImage(data: data!)!, forKey: photoId as NSString)
+                        }
+                    }
+                }
+            }
+            return cell
+        } else if postType == "poll" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PollPostCell", for: indexPath) as! PollPostCell
+            return cell
+        } else if postType == "food" {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "FoodPostCell", for: indexPath) as! FoodPostCell
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TVPostCell", for: indexPath) as! TVPostCell
+            return cell
+        }
     }
     
     @objc func topTapped() {
@@ -119,6 +248,37 @@ class UserVC: UIViewController {
             }
         }
     }
+    
+    func react1(_ sender: TextPostCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("tapped 😍")
+    }
+    
+    func react2(_ sender: TextPostCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("tapped 😎")
+    }
+    
+    func react3(_ sender: TextPostCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("tapped 😡")
+    }
+    
+    func react4(_ sender: TextPostCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("tapped 😔")
+    }
+    
+    func react5(_ sender: TextPostCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("tapped 😂")
+    }
+    
+    func react6(_ sender: TextPostCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("tapped 😉")
+    }
+
 
 
 }
