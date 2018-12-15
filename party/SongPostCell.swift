@@ -9,10 +9,20 @@
 import UIKit
 
 class SongPostCell: UITableViewCell {
+    
+    @IBOutlet weak var artistLbl: UILabel!
+    @IBOutlet weak var trackLbl: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var albumImg: UIImageView!
+    
+    var postId: String!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        //style album img
+        albumImg.layer.cornerRadius = 10
+        albumImg.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

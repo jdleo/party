@@ -10,15 +10,20 @@ import UIKit
 import YXWaveView
 import SwiftMessages
 import Firebase
+import AVFoundation
+import SAConfettiView
 
 class UserVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, PostCellDelegate {
     
+    
     @IBOutlet weak var followBtn: UIButton!
+    
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var usernameLbl: UILabel!
     @IBOutlet weak var postsLbl: UILabel!
     @IBOutlet weak var followersLbl: UILabel!
     @IBOutlet weak var followingLbl: UILabel!
+    
     @IBOutlet weak var verifiedImg: UIImageView!
     @IBOutlet weak var crownImg: UIImageView!
     @IBOutlet weak var originalImg: UIImageView!
@@ -35,6 +40,8 @@ class UserVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISc
     
     var userId: String = ""
     var userImg: UIImage!
+    
+    var isFollowing = false
     
     //let screenHeight = UIScreen.main.bounds.height
     //let scrollViewContentHeight = 800 as CGFloat
@@ -113,6 +120,19 @@ class UserVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISc
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = posts[indexPath.row]
+        let postType = post["type"] as! String
+        
+        if postType == "song" {
+            let preview = post["preview"] as! String
+            
+            if preview != "null" {
+                self.playSound(soundUrl: preview)
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let post = posts[indexPath.row]
         let type = post["type"] as! String
@@ -121,9 +141,11 @@ class UserVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISc
             return 200
         } else if type == "photo" {
             return 400
+        } else if type == "poll" {
+            return 290
         }
         
-        return 100
+        return 130
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -160,12 +182,45 @@ class UserVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISc
             return cell
         } else if postType == "song" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SongPostCell", for: indexPath) as! SongPostCell
+            let timestamp = post["created_at"] as! Timestamp
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM d, h:mm a"
+            dateFormatter.timeZone = TimeZone.current
+            cell.dateLbl.text = "\(dateFormatter.string(from: timestamp.dateValue()))"
+            
+            let artist = post["artist"] as! String
+            let track = post["track"] as! String
+            cell.artistLbl.text = artist
+            cell.trackLbl.text = track
+            
+            let imageLink = post["image"] as! String
+            
+            cell.albumImg.image = nil
+            cell.tag = indexPath.row
+            
+            let url = URL(string: imageLink)
+            
+            if let cachedImage = imageCache.object(forKey: url?.absoluteString as! NSString) {
+                cell.albumImg.image = cachedImage
+            } else {
+                DispatchQueue.global().async {
+                    let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                    DispatchQueue.main.async {
+                        if cell.tag == indexPath.row {
+                            cell.albumImg.image = UIImage(data: data!)
+                            self.imageCache.setObject(UIImage(data: data!)!, forKey: url?.absoluteString as! NSString)
+                        }
+                    }
+                }
+            }
+            
             return cell
         } else if postType == "photo" {
             let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoPostCell", for: indexPath) as! PhotoPostCell
             cell.delegate = self
             let timestamp = post["created_at"] as! Timestamp
             let photoId = post["photoId"] as! String
+            cell.postId = post["id"] as! String
             cell.postImg.image = nil
             cell.tag = indexPath.row
             let dateFormatter = DateFormatter()
@@ -249,6 +304,58 @@ class UserVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISc
         }
     }
     
+    @IBAction func attemptFollow(_ sender: Any) {
+        if self.isFollowing {
+            //user is already following
+            let db = Firestore.firestore()
+            
+            //set data for following
+            if let uid = Auth.auth().currentUser?.uid {
+                db.collection("following").document(uid).collection("following").document(self.userId).delete() { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                        self.followBtn.setTitle("Follow", for: .normal)
+                        self.isFollowing = false
+                    }
+                }
+            }
+        } else {
+            //user is not already following
+            let db = Firestore.firestore()
+            
+            //set data for following
+            if let uid = Auth.auth().currentUser?.uid {
+                db.collection("following").document(uid).collection("following").document(self.userId).setData([
+                    "time": Timestamp.init()
+                ]) { err in
+                    if let err = err {
+                        print("Error writing document: \(err)")
+                    } else {
+                        print("Document successfully written!")
+                        self.followBtn.setTitle("Following ✓", for: .normal)
+                        self.isFollowing = true
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    //helper function to play .mp3 file
+    func playSound(soundUrl: String) {
+        var player: AVPlayer!
+        let url = URL.init(string: soundUrl)
+        do {
+            let playerItem: AVPlayerItem = AVPlayerItem(url: url!)
+            player = AVPlayer(playerItem: playerItem)
+            player.play()
+        }catch let error {
+            print("Error: \(error.localizedDescription)")
+        }
+    }
+    
     func react1(_ sender: TextPostCell) {
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         print("tapped 😍")
@@ -278,7 +385,34 @@ class UserVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISc
         guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
         print("tapped 😉")
     }
-
-
-
+    
+    func react1(_ sender: PhotoPostCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("tapped 😍")
+    }
+    
+    func react2(_ sender: PhotoPostCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("tapped 😍")
+    }
+    
+    func react3(_ sender: PhotoPostCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("tapped 😍")
+    }
+    
+    func react4(_ sender: PhotoPostCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("tapped 😍")
+    }
+    
+    func react5(_ sender: PhotoPostCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("tapped 😍")
+    }
+    
+    func react6(_ sender: PhotoPostCell) {
+        guard let tappedIndexPath = tableView.indexPath(for: sender) else { return }
+        print("tapped 😍")
+    }
 }

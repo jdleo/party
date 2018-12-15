@@ -535,13 +535,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open. 🔎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oT-DT-uTi">
-                                <rect key="frame" x="99" y="80" width="177" height="49"/>
+                                <rect key="frame" x="99.5" y="80" width="176.5" height="49"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="40"/>
                                 <color key="textColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Everything about Party is public, and transparent." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOb-97-0uA">
-                                <rect key="frame" x="12" y="137" width="351" height="49"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Everything about Party is public, and transparent." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOb-97-0uA">
+                                <rect key="frame" x="12" y="135" width="351" height="44"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -561,7 +561,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbG-Ks-XzO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2336" y="-563"/>
+            <point key="canvasLocation" x="2335.1999999999998" y="-563.56821589205401"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="Dlb-YL-9cg">
@@ -980,41 +980,44 @@
                                                 <state key="normal" title="Follow">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="attemptFollow:" destination="hFs-mB-ypQ" eventType="touchUpInside" id="VbS-SI-m79"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LqG-My-3BX">
-                                                <rect key="frame" x="146.5" y="78" width="82.5" height="62"/>
+                                                <rect key="frame" x="151" y="78" width="73" height="59.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4w-9E-XFL">
-                                                        <rect key="frame" x="32" y="0.0" width="18.5" height="33"/>
+                                                        <rect key="frame" x="29" y="0.0" width="15.5" height="31.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="27"/>
                                                         <color key="textColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iDV-Wm-QAA">
-                                                        <rect key="frame" x="0.0" y="41" width="82.5" height="21"/>
+                                                        <rect key="frame" x="0.0" y="39.5" width="73" height="20"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z8G-0X-aC0">
-                                                <rect key="frame" x="262" y="78" width="85" height="62"/>
+                                                <rect key="frame" x="257" y="78" width="73" height="59.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FzK-4P-zrn">
-                                                        <rect key="frame" x="33" y="0.0" width="18.5" height="33"/>
+                                                        <rect key="frame" x="29" y="0.0" width="15.5" height="31.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="27"/>
                                                         <color key="textColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peb-Po-RNL">
-                                                        <rect key="frame" x="0.0" y="41" width="85" height="21"/>
+                                                        <rect key="frame" x="0.0" y="39.5" width="73" height="20"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="R3Q-lB-Hzb">
-                                                <rect key="frame" x="16" y="170" width="343" height="36"/>
+                                                <rect key="frame" x="16" y="167.5" width="343" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="VMU-t2-L5X"/>
                                                 </constraints>
@@ -1030,23 +1033,23 @@
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </segmentedControl>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hgC-F9-x37">
-                                                <rect key="frame" x="49.5" y="78" width="47" height="62"/>
+                                                <rect key="frame" x="57.5" y="78" width="43.5" height="59.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2j-tV-jCT">
-                                                        <rect key="frame" x="14" y="0.0" width="18.5" height="33"/>
+                                                        <rect key="frame" x="14" y="0.0" width="15.5" height="31.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="27"/>
                                                         <color key="textColor" red="0.99215686270000003" green="0.0" blue="0.3294117647" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgt-vM-Zg1">
-                                                        <rect key="frame" x="0.0" y="41" width="47" height="21"/>
+                                                        <rect key="frame" x="0.0" y="39.5" width="43.5" height="20"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6PN-bM-fb9">
-                                                <rect key="frame" x="0.0" y="225" width="375" height="575"/>
+                                                <rect key="frame" x="0.0" y="222.5" width="375" height="577.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableView>
                                         </subviews>
@@ -1191,17 +1194,16 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2D-i2-VHs">
-                                <rect key="frame" x="339" y="28" width="20" height="20"/>
+                                <rect key="frame" x="334" y="28" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="LxM-4I-l9j"/>
-                                    <constraint firstAttribute="height" constant="20" id="geH-10-Zne"/>
+                                    <constraint firstAttribute="width" constant="25" id="LxM-4I-l9j"/>
+                                    <constraint firstAttribute="height" constant="25" id="geH-10-Zne"/>
                                 </constraints>
                                 <state key="normal" image="upload"/>
                                 <connections>
                                     <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="CDA-DV-MDc"/>
                                     <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="SUl-kE-RPn"/>
-                                    <action selector="upload:" destination="iLv-2i-F3V" eventType="touchUpInside" id="aL4-Zi-Dni"/>
-                                    <action selector="upload:" destination="u6y-4i-8xI" eventType="touchUpInside" id="vBc-Rp-94m"/>
+                                    <action selector="upload:" destination="u6y-4i-8xI" eventType="touchUpInside" id="Cq4-n3-eVC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1361,18 +1363,16 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHH-rw-Ypy">
-                                <rect key="frame" x="339" y="28" width="20" height="20"/>
+                                <rect key="frame" x="334" y="28" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="5hZ-5o-rfy"/>
-                                    <constraint firstAttribute="height" constant="20" id="jpf-xE-Zz3"/>
+                                    <constraint firstAttribute="width" constant="25" id="5hZ-5o-rfy"/>
+                                    <constraint firstAttribute="height" constant="25" id="jpf-xE-Zz3"/>
                                 </constraints>
                                 <state key="normal" image="upload"/>
                                 <connections>
                                     <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="H2w-36-c5V"/>
                                     <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="fzZ-JX-Q6g"/>
-                                    <action selector="upload:" destination="u6y-4i-8xI" eventType="touchUpInside" id="BxV-et-fkR"/>
-                                    <action selector="upload:" destination="YKw-xC-R9h" eventType="touchUpInside" id="C2p-TG-54t"/>
-                                    <action selector="upload:" destination="iLv-2i-F3V" eventType="touchUpInside" id="dPa-ix-9Rl"/>
+                                    <action selector="upload:" destination="YKw-xC-R9h" eventType="touchUpInside" id="LEc-aC-pP1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1514,19 +1514,16 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAe-R8-Euk">
-                                <rect key="frame" x="339" y="28" width="20" height="20"/>
+                                <rect key="frame" x="334" y="28" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="Fs7-af-WC1"/>
-                                    <constraint firstAttribute="height" constant="20" id="iEY-ZH-Ka6"/>
+                                    <constraint firstAttribute="width" constant="25" id="Fs7-af-WC1"/>
+                                    <constraint firstAttribute="height" constant="25" id="iEY-ZH-Ka6"/>
                                 </constraints>
                                 <state key="normal" image="upload"/>
                                 <connections>
                                     <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="QXv-rM-zlC"/>
                                     <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="swI-H2-m8W"/>
                                     <action selector="upload:" destination="QLO-Fr-Hcr" eventType="touchUpInside" id="3Ma-Xw-iBG"/>
-                                    <action selector="upload:" destination="u6y-4i-8xI" eventType="touchUpInside" id="AX0-C1-v0j"/>
-                                    <action selector="upload:" destination="iLv-2i-F3V" eventType="touchUpInside" id="Z5h-yB-nXW"/>
-                                    <action selector="upload:" destination="YKw-xC-R9h" eventType="touchUpInside" id="pWn-9k-2wC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1770,19 +1767,16 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzG-1r-K1n">
-                                <rect key="frame" x="339" y="28" width="20" height="20"/>
+                                <rect key="frame" x="334" y="28" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="3aL-Wm-J00"/>
-                                    <constraint firstAttribute="width" constant="20" id="Uzc-8e-AbC"/>
+                                    <constraint firstAttribute="height" constant="25" id="3aL-Wm-J00"/>
+                                    <constraint firstAttribute="width" constant="25" id="Uzc-8e-AbC"/>
                                 </constraints>
                                 <state key="normal" image="upload"/>
                                 <connections>
                                     <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="dAL-ry-3K0"/>
                                     <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="lvj-r8-d7O"/>
                                     <action selector="upload:" destination="sVh-eE-bIv" eventType="touchUpInside" id="3CR-34-l5z"/>
-                                    <action selector="upload:" destination="YKw-xC-R9h" eventType="touchUpInside" id="HLl-x3-mCl"/>
-                                    <action selector="upload:" destination="u6y-4i-8xI" eventType="touchUpInside" id="cKi-m9-xWA"/>
-                                    <action selector="upload:" destination="iLv-2i-F3V" eventType="touchUpInside" id="y7P-AW-Rwf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1868,16 +1862,16 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGs-IZ-yZL">
-                                <rect key="frame" x="339" y="28" width="20" height="20"/>
+                                <rect key="frame" x="334" y="28" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="OyP-Zq-M5f"/>
-                                    <constraint firstAttribute="width" constant="20" id="sNR-Kb-v4H"/>
+                                    <constraint firstAttribute="height" constant="25" id="Rdj-Ur-pAO"/>
+                                    <constraint firstAttribute="width" constant="25" id="zI5-Eh-9Yg"/>
                                 </constraints>
                                 <state key="normal" image="upload"/>
                                 <connections>
                                     <action selector="goBack:" destination="mCy-D8-ZgM" eventType="touchUpInside" id="hWj-WF-toY"/>
                                     <action selector="goBack:" destination="z93-6P-Hef" eventType="touchUpInside" id="yqS-xQ-9uc"/>
-                                    <action selector="upload:" destination="iLv-2i-F3V" eventType="touchUpInside" id="gcj-pG-MOC"/>
+                                    <action selector="upload:" destination="iLv-2i-F3V" eventType="touchUpInside" id="6Ge-UM-2II"/>
                                 </connections>
                             </button>
                         </subviews>

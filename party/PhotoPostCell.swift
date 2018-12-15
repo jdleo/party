@@ -13,6 +13,8 @@ class PhotoPostCell: UITableViewCell {
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var dateLbl: UILabel!
     
+    var postId: String!
+    
     weak var delegate: PostCellDelegate?
 
     override func awakeFromNib() {
